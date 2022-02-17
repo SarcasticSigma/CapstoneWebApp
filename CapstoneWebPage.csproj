@@ -67,20 +67,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="account-info.aspx" />
     <Content Include="App_Data\SquireDatabase.mdf" />
     <Content Include="App_Data\SquireDatabase_log.ldf">
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\CapstoneStyle.css" />
     <Content Include="home.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="Scripts\StickyNav.js" />
+    <Content Include="view-packages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="account-info.aspx.cs">
+      <DependentUpon>account-info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account-info.aspx.designer.cs">
+      <DependentUpon>account-info.aspx</DependentUpon>
+    </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -90,6 +109,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view-packages.aspx.cs">
+      <DependentUpon>view-packages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view-packages.aspx.designer.cs">
+      <DependentUpon>view-packages.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />

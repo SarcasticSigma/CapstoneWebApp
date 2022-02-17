@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="account-info.aspx" />
+    <Content Include="addDummyData.aspx" />
     <Content Include="App_Data\SquireDatabase.mdf" />
     <Content Include="App_Data\SquireDatabase_log.ldf">
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
@@ -75,6 +76,7 @@
     <Content Include="CSS\CapstoneStyle.css" />
     <Content Include="home.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="register.aspx" />
     <Content Include="Scripts\StickyNav.js" />
     <Content Include="view-packages.aspx" />
     <Content Include="Web.config" />
@@ -86,6 +88,13 @@
     </Compile>
     <Compile Include="account-info.aspx.designer.cs">
       <DependentUpon>account-info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addDummyData.aspx.cs">
+      <DependentUpon>addDummyData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addDummyData.aspx.designer.cs">
+      <DependentUpon>addDummyData.aspx</DependentUpon>
     </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
@@ -109,6 +118,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view-packages.aspx.cs">
       <DependentUpon>view-packages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

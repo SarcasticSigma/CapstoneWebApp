@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SquireDatabase.mdf" />
+    <Content Include="App_Data\SquireDatabase_log.ldf">
+      <DependentUpon>SquireDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

@@ -16,9 +16,11 @@
     <header>
         <div id="navbar">
             <ul>
-                <li><a href="home.aspx">Home</a></li>
-                <li><a class="accountInformation" href="account-info.aspx">Account Information</a></li>
-                <li><a class="viewPackages" href="view-packages.aspx">View Packages</a></li>
+                <li><a class="navitem" href="home.aspx">Home</a></li>
+                <li><a class="navitem" href="about.aspx">About</a></li>
+                <li><a class="navitem" href="account-info.aspx">Account Information</a></li>
+                <li><a class="navitem" href="view-packages.aspx">View Packages</a></li>
+
             </ul>
         </div>
     </header>

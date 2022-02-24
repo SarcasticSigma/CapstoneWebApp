@@ -1,4 +1,5 @@
-﻿table, th, td {
+﻿/* fix nav bar */
+table, th, td {
     border: 1px solid black;
 }
 

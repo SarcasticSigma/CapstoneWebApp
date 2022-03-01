@@ -58,3 +58,20 @@ li a {
         padding-top: 20px;
         padding-bottom:20px;
     }
+
+#homepage {
+margin: auto;
+}
+
+#register {
+margin:auto;
+}
+    #register label {
+        font-size:16px;
+    }
+    #register .textbox {
+        
+    }
+
+#SelectButton a{
+}

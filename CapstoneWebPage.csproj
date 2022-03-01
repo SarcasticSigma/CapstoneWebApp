@@ -74,6 +74,7 @@
     <Content Include="App_Data\SquireDatabase_log.ldf">
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="create-account.aspx" />
     <Content Include="CSS\CapstoneStyle.css" />
     <Content Include="home.aspx" />
     <Content Include="login.aspx" />
@@ -102,6 +103,13 @@
     </Compile>
     <Compile Include="addDummyData.aspx.designer.cs">
       <DependentUpon>addDummyData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="create-account.aspx.cs">
+      <DependentUpon>create-account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="create-account.aspx.designer.cs">
+      <DependentUpon>create-account.aspx</DependentUpon>
     </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>

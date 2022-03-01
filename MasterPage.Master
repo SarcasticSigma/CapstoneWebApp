@@ -10,7 +10,6 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link type="text/css" rel="stylesheet" href="CSS\CapstoneStyle.css">
-    <script src="Scripts/StickyNav.js"></script>
 </head>
 <body>
     <header>

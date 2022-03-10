@@ -283,6 +283,11 @@ node_modules/
 # Visual Studio 6 build log
 *.plg
 
+# Visual Studio database files
+
+*.mdf
+*.ldf
+
 # Visual Studio 6 workspace options file
 *.opt
 

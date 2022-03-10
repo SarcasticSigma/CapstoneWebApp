@@ -4,17 +4,28 @@
 
 <html>
 <head runat="server">
+
+
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
-
     </asp:ContentPlaceHolder>
+    <link type="text/css" rel="stylesheet" href="CSS\CapstoneStyle.css">
 </head>
 <body>
-    <h1>Senior Capstone Project</h1>
+    <header>
+        <div id="navbar">
+            <ul>
+                <li><a class="navitem" href="home.aspx">Home</a></li>
+                <li><a class="navitem" href="about.aspx">About</a></li>
+                <li><a class="navitem" href="account-info.aspx">Account Information</a></li>
+                <li><a class="navitem" href="view-packages.aspx">View Packages</a></li>
+
+            </ul>
+        </div>
+    </header>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            
             </asp:ContentPlaceHolder>
         </div>
     </form>

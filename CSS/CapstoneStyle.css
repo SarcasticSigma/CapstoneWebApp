@@ -1,0 +1,77 @@
+﻿/* fix nav bar */
+table, th, td {
+    border: 1px solid black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+.sticky {
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.navitem {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+    li a:hover:not(.active) {
+        background-color: #ddd;
+    }
+
+    li a.active {
+        color: white;
+        background-color: #04AA6D;
+    }
+
+#navbar {
+    overflow: hidden;
+}
+
+#about {
+    width: 75%;
+    margin: auto;
+}
+    #about h2 {
+    margin: inherit;
+    }
+
+    #about p {
+        padding: 5px;
+        border-top: solid black 1px;
+        border-bottom: solid black 1px;
+        padding-top: 20px;
+        padding-bottom:20px;
+    }
+
+#homepage {
+margin: auto;
+}
+
+#register {
+margin:auto;
+}
+    #register label {
+        font-size:16px;
+    }
+    #register .textbox {
+        
+    }
+
+#SelectButton a{
+}

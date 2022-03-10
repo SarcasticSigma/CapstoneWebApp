@@ -286,7 +286,7 @@ node_modules/
 # Visual Studio database files
 
 *.mdf
-*ldf
+*.ldf
 
 # Visual Studio 6 workspace options file
 *.opt

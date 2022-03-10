@@ -49,25 +49,12 @@ namespace CapstoneWebPage
                 //TODO: In implementation: Ensure this is guarded against SQL Injection. If accessing actual SWORDS database, just used a parameterized query.
                 long providedId;
                 if (!(long.TryParse(txtMGAId.Text, out providedId))) { throw new ArgumentException("ID is not valid."); };
-                SWORDSDatabase.IdType id = SWORDSDatabase.LookupID(providedId);
-                switch (id)
-                {
-                    case SWORDSDatabase.IdType.STUDENT:
-                        {
-                            SQLString.Append("(Username, StudentId, PasswordHash, FirstName, LastName) VALUES (@username, @id, @passwordHash, @firstName, @lastName)");
-                            break;
-                        }
-                    case SWORDSDatabase.IdType.STAFF:
-                        {
-                            SQLString.Append("(Username, StaffId, PasswordHash, FirstName, LastName) VALUES (@username, @id, @passwordHash, @firstName, @lastName)");
-                            break;
-                        }
-                    case SWORDSDatabase.IdType.NONE:
-                    default:
-                        {
-                            throw new ArgumentException("ID does not belong to student or staff.");
-                        }
-                }
+                
+                SWORDSDatabaseConnection dbConnection = new SWORDSDatabaseConnection(providedId);
+                Console.WriteLine(dbConnection);
+                
+
+
 
                 String mySQL = SQLString.ToString();
 

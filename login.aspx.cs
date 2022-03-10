@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
+using System.Data.SqlClient;
+
 namespace CapstoneWebPage
 {
     public partial class login : System.Web.UI.Page
@@ -21,17 +23,22 @@ namespace CapstoneWebPage
 
             System.IO.MemoryStream mStrm = new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes(txtPassword.Text));
             byte[] result = sha.ComputeHash(mStrm);
-           
-            
+
+
             String hash = BitConverter.ToString(result);
             StringBuilder sb = new StringBuilder();
-            foreach (char c in hash) {
-                if (c != '-'){
+            foreach (char c in hash)
+            {
+                if (c != '-')
+                {
                     sb.Append(c);
                 }
             }
             String finalHash = sb.ToString();
             lblOutput.Text = "Output:" + txtUsername.Text + " " + txtPassword.Text + "\nHash: " + finalHash;
+
+
+
         }
     }
 }

@@ -9,7 +9,7 @@ namespace CapstoneWebPage
     {
         String name;
         Student(long studentId, string username) {
-            SWORDSDatabaseConnection.LookupID.getName
+            
             
         }
     }

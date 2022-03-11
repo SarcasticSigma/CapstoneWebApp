@@ -11,31 +11,18 @@ namespace CapstoneWebPage
     /// </summary>
     public class SWORDSDatabaseConnection
     {
-        enum idTypes
+        public enum idTypes
         {
             STAFF, STUDENT
         }
         idTypes idType;
-        long id;
 
+        private long id;
         private string firstName;
         private string lastName;
-        public string FullName
-        {
-            get { return firstName + " " + lastName; }
-            set { FullName = value; }
-        }
-        public string email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-        public string PhoneNumber
-        {
-            get { return PhoneNumber; }
-            set { PhoneNumber = value; }
-        }
-
+        private string fullName;
+        private string email;
+        private string phoneNumber;
 
 
         public SWORDSDatabaseConnection(long IDNum)
@@ -54,11 +41,37 @@ namespace CapstoneWebPage
             {
                 throw new ArgumentException("ID does not belong to student or staff");
             }
+            this.id = IDNum;
             this.firstName = Faker.Name.First();
             this.lastName = Faker.Name.Last();
             this.FullName = firstName + " " + lastName;
             this.email = lastName + firstName + "@mga.edu";
-            this.PhoneNumber = Faker.Phone.Number();
+            this.phoneNumber = Faker.Phone.Number();
+        }
+
+        public idTypes IDType {
+            get { return idType; }
+            
+        }
+        public string FullName
+        {
+            get { return firstName + " " + lastName; }
+            set { fullName = value; }
+        }
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        public string PhoneNumber
+        {
+            get { return PhoneNumber; }
+            set { phoneNumber = value; }
+        }
+        public long Id
+        {
+            get { return id; }
+            set { id = value; }
         }
 
         override public string ToString()

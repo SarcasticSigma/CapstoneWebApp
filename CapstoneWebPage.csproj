@@ -78,7 +78,7 @@
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="auth\Legal Disclaimer.html" />
-    <Content Include="legal.aspx" />
+    <Content Include="uauth\legal.aspx" />
     <Content Include="uauth\create-account.aspx" />
     <Content Include="CSS\CapstoneStyle.css" />
     <Content Include="auth\user-home.aspx" />
@@ -90,11 +90,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Roles.cs" />
-    <Compile Include="legal.aspx.cs">
+    <Compile Include="uauth\legal.aspx.cs">
       <DependentUpon>legal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="legal.aspx.designer.cs">
+    <Compile Include="uauth\legal.aspx.designer.cs">
       <DependentUpon>legal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Seeds\DefaultRoles.cs" />

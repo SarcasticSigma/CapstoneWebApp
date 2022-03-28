@@ -78,9 +78,11 @@
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="auth\Legal Disclaimer.html" />
+    <Content Include="legal.aspx" />
     <Content Include="uauth\create-account.aspx" />
     <Content Include="CSS\CapstoneStyle.css" />
-    <Content Include="auth\home.aspx" />
+    <Content Include="auth\user-home.aspx" />
+    <Content Include="uauth\home.aspx" />
     <Content Include="uauth\login.aspx" />
     <Content Include="uauth\PageNotFound.aspx" />
     <Content Include="uauth\signout.aspx" />
@@ -88,6 +90,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Roles.cs" />
+    <Compile Include="legal.aspx.cs">
+      <DependentUpon>legal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="legal.aspx.designer.cs">
+      <DependentUpon>legal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Seeds\DefaultRoles.cs" />
     <Compile Include="auth\about.aspx.cs">
       <DependentUpon>about.aspx</DependentUpon>
@@ -122,11 +131,18 @@
     <Compile Include="uauth\create-account.aspx.designer.cs">
       <DependentUpon>create-account.aspx</DependentUpon>
     </Compile>
-    <Compile Include="auth\home.aspx.cs">
+    <Compile Include="auth\user-home.aspx.cs">
+      <DependentUpon>user-home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auth\user-home.aspx.designer.cs">
+      <DependentUpon>user-home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uauth\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="auth\home.aspx.designer.cs">
+    <Compile Include="uauth\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="uauth\login.aspx.cs">

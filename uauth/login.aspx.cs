@@ -21,9 +21,14 @@ namespace CapstoneWebPage
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            //SQL INJECTION
-            if (txtUsername.Text == "Sigma" && txtPassword.Text == "123") {
+            //Potential SQL INJECTION
+            if (txtUsername.Text == "Sigma" && txtPassword.Text == "123")
+            {
                 FormsAuthentication.RedirectFromLoginPage(txtUsername.Text, false);
+            }
+            else {
+                lblOutput.Text = "Error: Username or password incorrect!";
+                lblOutput.Style.Add("color", "red");
             }
 
 

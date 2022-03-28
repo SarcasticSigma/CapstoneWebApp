@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="CapstoneWebPage.MasterPage" %>
 
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
 
@@ -19,6 +18,7 @@
                 <li><a class="navitem" href="about.aspx">About</a></li>
                 <li><a class="navitem" href="account-info.aspx">Account Information</a></li>
                 <li><a class="navitem" href="view-packages.aspx">View Packages</a></li>
+                <li><a id="ancSignout" runat="server" class="navitem" href="#">Signout</a>                </li>
 
             </ul>
         </div>

@@ -12,6 +12,11 @@ ul {
     background-color: #f3f3f3;
 }
 
+footer {
+position:fixed;
+bottom:0px;
+}
+
 .sticky {
     top: 0;
     position: fixed;

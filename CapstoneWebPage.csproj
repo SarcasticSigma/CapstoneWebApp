@@ -70,13 +70,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="uauth\about.aspx" />
+    <Content Include="auth\about.aspx" />
     <Content Include="auth\account-info.aspx" />
     <Content Include="addDummyData.aspx" />
     <Content Include="App_Data\SquireDatabase.mdf" />
     <Content Include="App_Data\SquireDatabase_log.ldf">
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="auth\Legal Disclaimer.html" />
     <Content Include="uauth\create-account.aspx" />
     <Content Include="CSS\CapstoneStyle.css" />
     <Content Include="auth\home.aspx" />
@@ -88,11 +89,11 @@
   <ItemGroup>
     <Compile Include="Constants\Roles.cs" />
     <Compile Include="Seeds\DefaultRoles.cs" />
-    <Compile Include="uauth\about.aspx.cs">
+    <Compile Include="auth\about.aspx.cs">
       <DependentUpon>about.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="uauth\about.aspx.designer.cs">
+    <Compile Include="auth\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
     <Compile Include="auth\account-info.aspx.cs">

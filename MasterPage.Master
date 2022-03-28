@@ -14,10 +14,10 @@
     <header>
         <div id="navbar">
             <ul>
-                <li><a class="navitem" href="home.aspx">Home</a></li>
-                <li><a class="navitem" href="about.aspx">About</a></li>
-                <li><a class="navitem" href="account-info.aspx">Account Information</a></li>
-                <li><a class="navitem" href="view-packages.aspx">View Packages</a></li>
+                <li><a class="navitem" href="./home.aspx">Home</a></li>
+                <li><a class="navitem" href="./about.aspx">About</a></li>
+                <li><a class="navitem" href="./account-info.aspx">Account Information</a></li>
+                <li><a class="navitem" href="./view-packages.aspx">View Packages</a></li>
                 <li><a id="ancSignout" runat="server" class="navitem" href="#">Signout</a>                </li>
 
             </ul>
@@ -29,5 +29,9 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <footer>
+        <h1>Legal information</h1>
+        <a href="uauth/legal.aspx"></a>
+    </footer>
 </body>
 </html>

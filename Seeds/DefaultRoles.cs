@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,4 +10,4 @@ namespace CapstoneWebPage.Seeds
         public static async SeedAsync(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager) { 
         }
     }
-}
+}*/

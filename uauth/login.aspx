@@ -9,5 +9,6 @@
     <asp:Label runat="server" id="Label1" AssociatedControlID="txtPassword">Password: </asp:Label>
     <asp:TextBox id="txtPassword" runat="server" TextMode="Password"></asp:TextBox><br />
     <asp:Button runat="server" ID="btnSubmit" text="Submit" OnClick="btnSubmit_Click"/>
-    <asp:Label runat="server" ID="lblOutput" Text="...Output..."></asp:Label>
+    <asp:Label runat="server" ID="lblOutput" Text=""></asp:Label>
+    
 </asp:Content>

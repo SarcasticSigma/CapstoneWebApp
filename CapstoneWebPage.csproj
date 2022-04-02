@@ -78,6 +78,7 @@
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="auth\Legal Disclaimer.html" />
+    <Content Include="uauth\forgot-password.aspx" />
     <Content Include="uauth\legal.aspx" />
     <Content Include="uauth\create-account.aspx" />
     <Content Include="CSS\CapstoneStyle.css" />
@@ -90,6 +91,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Roles.cs" />
+    <Compile Include="uauth\forgot-password.aspx.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uauth\forgot-password.aspx.designer.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+    </Compile>
     <Compile Include="uauth\legal.aspx.cs">
       <DependentUpon>legal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,10 +192,34 @@
     <Compile Include="auth\view-packages.aspx.designer.cs">
       <DependentUpon>view-packages.aspx</DependentUpon>
     </Compile>
+    <Compile Include="uauth\TestLogin.aspx.cs">
+      <DependentUpon>TestLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uauth\TestLogin.aspx.designer.cs">
+      <DependentUpon>TestLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uauth\TestUserAdd.aspx.cs">
+      <DependentUpon>TestUserAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uauth\TestUserAdd.aspx.designer.cs">
+      <DependentUpon>TestUserAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uauth\TestUserRetrival.aspx.cs">
+      <DependentUpon>TestUserRetrival.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uauth\TestUserRetrival.aspx.designer.cs">
+      <DependentUpon>TestUserRetrival.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
+    <Content Include="uauth\TestLogin.aspx" />
+    <Content Include="uauth\TestUserAdd.aspx" />
+    <Content Include="uauth\TestUserRetrival.aspx" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

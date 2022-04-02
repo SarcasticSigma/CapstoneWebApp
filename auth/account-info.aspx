@@ -12,5 +12,6 @@
     <p><strong>E-Mail</strong></p>
     <p><strong>Phone</strong></p>
     <p><strong>Change Password</strong></p>
-
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Login ID="Login1" runat="server"></asp:Login>
 </asp:Content>

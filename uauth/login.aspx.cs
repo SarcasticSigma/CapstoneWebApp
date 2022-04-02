@@ -21,6 +21,7 @@ namespace CapstoneWebPage
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            /*
             //Potential SQL INJECTION
             if (txtUsername.Text == "Sigma" && txtPassword.Text == "123")
             {
@@ -32,7 +33,7 @@ namespace CapstoneWebPage
             }
 
 
-            /*
+            
             HashAlgorithm sha = SHA256.Create();
 
             System.IO.MemoryStream mStrm = new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes(txtPassword.Text));
@@ -53,6 +54,11 @@ namespace CapstoneWebPage
 
             */
 
+        }
+
+        protected void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.Redirect("~/uauth/create-account.aspx");
         }
     }
 }

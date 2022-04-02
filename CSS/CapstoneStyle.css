@@ -1,5 +1,12 @@
-﻿/* fix nav bar */
-table, th, td {
+﻿.login {
+    border: none;
+}
+    .login tr,td,tc {
+        border: none;
+    }
+
+
+.viewPackages table, .viewPackages th, .viewPackages td {
     border: 1px solid black;
 }
 
@@ -11,12 +18,14 @@ ul {
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
 }
+
 .legal {
-text-align:center;
+    text-align: center;
 }
+
 footer {
-position:fixed;
-bottom:0px;
+    position: fixed;
+    bottom: 0px;
 }
 
 .sticky {
@@ -54,8 +63,9 @@ li a {
     width: 75%;
     margin: auto;
 }
+
     #about h2 {
-    margin: inherit;
+        margin: inherit;
     }
 
     #about p {
@@ -63,22 +73,23 @@ li a {
         border-top: solid black 1px;
         border-bottom: solid black 1px;
         padding-top: 20px;
-        padding-bottom:20px;
+        padding-bottom: 20px;
     }
 
 #homepage {
-margin: auto;
+    margin: auto;
 }
 
 #register {
-margin:auto;
+    margin: auto;
 }
+
     #register label {
-        font-size:16px;
-    }
-    #register .textbox {
-        
+        font-size: 16px;
     }
 
-#SelectButton a{
+    #register .textbox {
+    }
+
+#SelectButton a {
 }

@@ -78,9 +78,10 @@
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="auth\Legal Disclaimer.html" />
+    <Content Include="uauth\create-account.aspx" />
     <Content Include="uauth\forgot-password.aspx" />
     <Content Include="uauth\legal.aspx" />
-    <Content Include="uauth\create-account.aspx" />
+    <Content Include="uauth\create-account-old.aspx" />
     <Content Include="CSS\CapstoneStyle.css" />
     <Content Include="auth\user-home.aspx" />
     <Content Include="uauth\home.aspx" />
@@ -91,6 +92,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Roles.cs" />
+    <Compile Include="uauth\create-account.aspx.cs">
+      <DependentUpon>create-account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uauth\create-account.aspx.designer.cs">
+      <DependentUpon>create-account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="uauth\forgot-password.aspx.cs">
       <DependentUpon>forgot-password.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,12 +140,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>strings.en-us.resx</DependentUpon>
     </Compile>
-    <Compile Include="uauth\create-account.aspx.cs">
-      <DependentUpon>create-account.aspx</DependentUpon>
+    <Compile Include="uauth\create-account-old.aspx.cs">
+      <DependentUpon>create-account-old.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="uauth\create-account.aspx.designer.cs">
-      <DependentUpon>create-account.aspx</DependentUpon>
+    <Compile Include="uauth\create-account-old.aspx.designer.cs">
+      <DependentUpon>create-account-old.aspx</DependentUpon>
     </Compile>
     <Compile Include="auth\user-home.aspx.cs">
       <DependentUpon>user-home.aspx</DependentUpon>

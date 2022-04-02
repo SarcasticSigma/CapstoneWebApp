@@ -15,6 +15,8 @@ namespace CapstoneWebPage.uauth
         {
             {
                 StringBuilder sb = new StringBuilder();
+
+
                 foreach (MembershipUser user in Membership.GetAllUsers())
                 {
                     String username = user.UserName;

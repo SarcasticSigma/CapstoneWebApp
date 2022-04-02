@@ -12,7 +12,7 @@
         </header>
 
 
-        <table style="width: 100%">
+        <table class="viewPackages" style="width: 100%">
             <tr>
                 <th>On the way</th>
                 <th>Recieved</th>

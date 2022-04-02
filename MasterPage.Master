@@ -30,7 +30,19 @@
         </div>
     </form>
     <footer>
-        <h1>Legal information</h1>
+        <!--This heading and its contents need to be purged from the final build.-->
+        <h3>Debug Information:</h3>
+        <ul>
+            <li>
+        <asp:Literal ID="LoggedIn" runat="server"></asp:Literal>
+                </li>
+            <li>
+                <asp:Literal ID="Users" runat="server"></asp:Literal>
+            </li>
+     
+            </ul>
+        <!--This heading and its contents need major revision.-->
+        <h3>Legal information</h3>
         <a href="legal.aspx"></a>
     </footer>
 </body>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CapstoneWebPage.uauth
 {
-    public partial class create_account : System.Web.UI.Page
+    public partial class create_account1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

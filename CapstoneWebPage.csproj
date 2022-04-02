@@ -72,12 +72,16 @@
   <ItemGroup>
     <Content Include="auth\about.aspx" />
     <Content Include="auth\account-info.aspx" />
-    <Content Include="addDummyData.aspx" />
+    <Content Include="Testing Pages\addDummyData.aspx" />
     <Content Include="App_Data\SquireDatabase.mdf" />
     <Content Include="App_Data\SquireDatabase_log.ldf">
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="auth\Legal Disclaimer.html" />
+    <Content Include="Testing Pages\TestCreateUserWizardEvents.aspx" />
+    <Content Include="Testing Pages\TestProfile.aspx" />
+    <Content Include="Testing Pages\TestProfileDataGet.aspx" />
+    <Content Include="uauth\create-account-old-2.aspx" />
     <Content Include="uauth\create-account.aspx" />
     <Content Include="uauth\forgot-password.aspx" />
     <Content Include="uauth\legal.aspx" />
@@ -92,6 +96,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Roles.cs" />
+    <Compile Include="Testing Pages\TestCreateUserWizardEvents.aspx.cs">
+      <DependentUpon>TestCreateUserWizardEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testing Pages\TestCreateUserWizardEvents.aspx.designer.cs">
+      <DependentUpon>TestCreateUserWizardEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testing Pages\TestProfile.aspx.cs">
+      <DependentUpon>TestProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testing Pages\TestProfile.aspx.designer.cs">
+      <DependentUpon>TestProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testing Pages\TestProfileDataGet.aspx.cs">
+      <DependentUpon>TestProfileDataGet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testing Pages\TestProfileDataGet.aspx.designer.cs">
+      <DependentUpon>TestProfileDataGet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uauth\create-account-old-2.aspx.cs">
+      <DependentUpon>create-account-old-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uauth\create-account-old-2.aspx.designer.cs">
+      <DependentUpon>create-account-old-2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="uauth\create-account.aspx.cs">
       <DependentUpon>create-account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -128,11 +160,11 @@
     <Compile Include="auth\account-info.aspx.designer.cs">
       <DependentUpon>account-info.aspx</DependentUpon>
     </Compile>
-    <Compile Include="addDummyData.aspx.cs">
+    <Compile Include="Testing Pages\addDummyData.aspx.cs">
       <DependentUpon>addDummyData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="addDummyData.aspx.designer.cs">
+    <Compile Include="Testing Pages\addDummyData.aspx.designer.cs">
       <DependentUpon>addDummyData.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\strings.en-us.designer.cs">
@@ -200,34 +232,34 @@
     <Compile Include="auth\view-packages.aspx.designer.cs">
       <DependentUpon>view-packages.aspx</DependentUpon>
     </Compile>
-    <Compile Include="uauth\TestLogin.aspx.cs">
+    <Compile Include="Testing Pages\TestLogin.aspx.cs">
       <DependentUpon>TestLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="uauth\TestLogin.aspx.designer.cs">
+    <Compile Include="Testing Pages\TestLogin.aspx.designer.cs">
       <DependentUpon>TestLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="uauth\TestUserAdd.aspx.cs">
+    <Compile Include="Testing Pages\TestUserAdd.aspx.cs">
       <DependentUpon>TestUserAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="uauth\TestUserAdd.aspx.designer.cs">
+    <Compile Include="Testing Pages\TestUserAdd.aspx.designer.cs">
       <DependentUpon>TestUserAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="uauth\TestUserRetrival.aspx.cs">
+    <Compile Include="Testing Pages\TestUserRetrival.aspx.cs">
       <DependentUpon>TestUserRetrival.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="uauth\TestUserRetrival.aspx.designer.cs">
+    <Compile Include="Testing Pages\TestUserRetrival.aspx.designer.cs">
       <DependentUpon>TestUserRetrival.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
-    <Content Include="uauth\TestLogin.aspx" />
-    <Content Include="uauth\TestUserAdd.aspx" />
-    <Content Include="uauth\TestUserRetrival.aspx" />
+    <Content Include="Testing Pages\TestLogin.aspx" />
+    <Content Include="Testing Pages\TestUserAdd.aspx" />
+    <Content Include="Testing Pages\TestUserRetrival.aspx" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

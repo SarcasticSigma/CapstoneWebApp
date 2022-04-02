@@ -8,6 +8,7 @@
     <script runat="server">
         void OnLoginError(object sender, EventArgs e) {
             debugOut.Text += "Login Error!";
+            
         }
     </script>
     <asp:Login ID="Login1" runat="server" OnLoginError="OnLoginError">

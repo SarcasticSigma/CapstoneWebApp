@@ -29,7 +29,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <footer style="position:absolute; bottom:0;">
+    <footer style="bottom:0;">
         <!--This heading and its contents need to be purged from the final build.-->
         <h3>Debug Information:</h3>
         <ul>

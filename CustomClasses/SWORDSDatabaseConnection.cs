@@ -25,7 +25,7 @@ namespace CapstoneWebPage
         private string phoneNumber;
 
 
-        public SWORDSDatabaseConnection(long IDNum)
+        public SWORDSDatabaseConnection(string IDNum)
         {
             long[] testStaffIds = new long[] { 9830078233, 9830000000 };
             long[] testStudentIds = new long[] { 983111111, 9831111222 };
@@ -48,14 +48,16 @@ namespace CapstoneWebPage
             this.email = lastName + firstName + "@mga.edu";
             this.phoneNumber = Faker.Phone.Number();
         }
-
+        public SWORDSDatabaseConnection() {
+            FullName = Faker.Name.FullName();
+        }
         public idTypes IDType {
             get { return idType; }
             
         }
         public string FullName
         {
-            get { return firstName + " " + lastName; }
+            get { return this.FullName; }
             set { fullName = value; }
         }
         public string Email
@@ -78,9 +80,13 @@ namespace CapstoneWebPage
             return id.Substring(0, 3) == "983";
         }
 
-        public static bool StaffId(string id)
+        public static bool IsStaffId(string id)
         {
             return id[id.Length - 1] == '9';
+        }
+        public static bool IsStudentId(string id)
+        {
+            return IdExists(id) && !IsStaffId(id);
         }
 
 

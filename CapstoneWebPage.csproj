@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="admin\AdminAddRole.aspx" />
     <Content Include="admin\AdminDeleteAccount.aspx" />
+    <Content Include="auth\account\add-id.aspx" />
     <Content Include="uauth\about.aspx" />
     <Content Include="auth\account\info.aspx" />
     <Content Include="images\favicon.ico" />
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="admin\AdminDeleteAccount.aspx.designer.cs">
       <DependentUpon>AdminDeleteAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="auth\account\add-id.aspx.cs">
+      <DependentUpon>add-id.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auth\account\add-id.aspx.designer.cs">
+      <DependentUpon>add-id.aspx</DependentUpon>
     </Compile>
     <Compile Include="Constants\Roles.cs" />
     <Compile Include="Testing Pages\TestCreateUserWizardEvents.aspx.cs">

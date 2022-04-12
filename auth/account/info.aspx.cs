@@ -14,8 +14,31 @@ namespace CapstoneWebPage
         {
             if (!Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student"))
             {
+                MessageBox
+                
+                Roles.AddUserToRole(Membership.GetUser().UserName, "Student");
+            }
+
+
+            if ()
+            SWORDSDatabaseConnection SWORDS = new SWORDSDatabaseConnection();
+            
+            
+            MembershipUser user = Membership.GetUser();
+
+            txtUsername.Text = user.UserName;
+            txtEmail.Text = user.Email;
+            txtName.Text = SWORDS.FullName;
+            
+            if (!Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student"))
+            {
                 
             }
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

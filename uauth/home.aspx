@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Welcome to Squire!</h1>
-    <h2></h2>
-    <asp:LoginView ID="LoginView1" runat="server"></asp:LoginView>
+    <h2>Login: <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" /></h2>
+  
     
 
 </asp:Content>

@@ -70,9 +70,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\AdminAddRole.aspx" />
     <Content Include="admin\AdminDeleteAccount.aspx" />
-    <Content Include="auth\about.aspx" />
-    <Content Include="auth\account-info.aspx" />
+    <Content Include="uauth\about.aspx" />
+    <Content Include="auth\account\info.aspx" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\SQUIRE LOGO, COPYWRITTEN Plus Package Transparency.jpg" />
     <Content Include="Testing Pages\addDummyData.aspx" />
@@ -80,24 +81,29 @@
     <Content Include="App_Data\SquireDatabase_log.ldf">
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="auth\Legal Disclaimer.html" />
+    <Content Include="uauth\Legal Disclaimer.html" />
     <Content Include="Testing Pages\TestCreateUserWizardEvents.aspx" />
     <Content Include="Testing Pages\TestProfile.aspx" />
     <Content Include="Testing Pages\TestProfileDataGet.aspx" />
-    <Content Include="uauth\create-account-old-2.aspx" />
     <Content Include="uauth\create-account.aspx" />
     <Content Include="uauth\forgot-password.aspx" />
     <Content Include="uauth\legal.aspx" />
-    <Content Include="uauth\create-account-old.aspx" />
     <Content Include="CSS\CapstoneStyle.css" />
-    <Content Include="auth\user-home.aspx" />
+    <Content Include="auth\student\user-home.aspx" />
     <Content Include="uauth\home.aspx" />
     <Content Include="uauth\login.aspx" />
     <Content Include="uauth\PageNotFound.aspx" />
     <Content Include="uauth\signout.aspx" />
-    <Content Include="auth\view-packages.aspx" />
+    <Content Include="auth\student\view-packages.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\AdminAddRole.aspx.cs">
+      <DependentUpon>AdminAddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminAddRole.aspx.designer.cs">
+      <DependentUpon>AdminAddRole.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\AdminDeleteAccount.aspx.cs">
       <DependentUpon>AdminDeleteAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,13 +133,6 @@
     <Compile Include="Testing Pages\TestProfileDataGet.aspx.designer.cs">
       <DependentUpon>TestProfileDataGet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="uauth\create-account-old-2.aspx.cs">
-      <DependentUpon>create-account-old-2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="uauth\create-account-old-2.aspx.designer.cs">
-      <DependentUpon>create-account-old-2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="uauth\create-account.aspx.cs">
       <DependentUpon>create-account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,19 +155,19 @@
       <DependentUpon>legal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Seeds\DefaultRoles.cs" />
-    <Compile Include="auth\about.aspx.cs">
+    <Compile Include="uauth\about.aspx.cs">
       <DependentUpon>about.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="auth\about.aspx.designer.cs">
+    <Compile Include="uauth\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
-    <Compile Include="auth\account-info.aspx.cs">
-      <DependentUpon>account-info.aspx</DependentUpon>
+    <Compile Include="auth\account\info.aspx.cs">
+      <DependentUpon>info.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="auth\account-info.aspx.designer.cs">
-      <DependentUpon>account-info.aspx</DependentUpon>
+    <Compile Include="auth\account\info.aspx.designer.cs">
+      <DependentUpon>info.aspx</DependentUpon>
     </Compile>
     <Compile Include="Testing Pages\addDummyData.aspx.cs">
       <DependentUpon>addDummyData.aspx</DependentUpon>
@@ -182,18 +181,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>strings.en-us.resx</DependentUpon>
     </Compile>
-    <Compile Include="uauth\create-account-old.aspx.cs">
-      <DependentUpon>create-account-old.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="uauth\create-account-old.aspx.designer.cs">
-      <DependentUpon>create-account-old.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="auth\user-home.aspx.cs">
+    <Compile Include="auth\student\user-home.aspx.cs">
       <DependentUpon>user-home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="auth\user-home.aspx.designer.cs">
+    <Compile Include="auth\student\user-home.aspx.designer.cs">
       <DependentUpon>user-home.aspx</DependentUpon>
     </Compile>
     <Compile Include="uauth\home.aspx.cs">
@@ -235,11 +227,11 @@
     <Compile Include="CustomClasses\Staff.cs" />
     <Compile Include="CustomClasses\Student.cs" />
     <Compile Include="CustomClasses\SWORDSDatabaseConnection.cs" />
-    <Compile Include="auth\view-packages.aspx.cs">
+    <Compile Include="auth\student\view-packages.aspx.cs">
       <DependentUpon>view-packages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="auth\view-packages.aspx.designer.cs">
+    <Compile Include="auth\student\view-packages.aspx.designer.cs">
       <DependentUpon>view-packages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Testing Pages\TestLogin.aspx.cs">
@@ -266,11 +258,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
+    <Content Include="auth\account\Web.config" />
+    <Content Include="admin\Web.config" />
     <None Include="packages.config" />
     <Content Include="Testing Pages\TestLogin.aspx" />
     <Content Include="Testing Pages\TestUserAdd.aspx" />
     <Content Include="Testing Pages\TestUserRetrival.aspx" />
     <Content Include="Web.config" />
+    <Content Include="auth\student\Web.config" />
+    <Content Include="uauth\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

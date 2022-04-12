@@ -4,9 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ActiveStepIndex="1" OnCreatedUser="CreateUserWizard1_CreatedUser">
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" CancelButtonDestinationPageUrl="~/uauth/home.aspx" ContinueDestinationPageUrl="~/auth/user-home.aspx">
         <WizardSteps>
-            <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
+            <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server" >
                 <ContentTemplate>
                     <table>
                         <tr>
@@ -61,18 +61,6 @@
                     </table>
                 </ContentTemplate>
             </asp:CreateUserWizardStep>
-            <asp:WizardStep runat="server" AllowReturn="False" Title="More Information">
-                <table>
-                    <tc>
-                        <tr>
-                            <td>
-                                <asp:Label ID="Label1" runat="server" Text="MGA ID:" AssociatedControlID="txtMGAId"></asp:Label></td>
-                            <td>
-                                <asp:TextBox ID="txtMGAId" runat="server"></asp:TextBox></td>
-                        </tr>
-                    </tc>
-                </table>
-            </asp:WizardStep>
             <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
             </asp:CompleteWizardStep>
         </WizardSteps>

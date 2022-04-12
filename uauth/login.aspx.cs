@@ -60,5 +60,14 @@ namespace CapstoneWebPage
         {
             HttpContext.Current.Response.Redirect("~/uauth/create-account.aspx");
         }
+
+        protected void Login1_LoggedIn(object sender, EventArgs e)
+        {
+            if (Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student"))
+            {
+                Login1.DestinationPageUrl="~/auth/student/user-home.aspx";
+            }
+            
+        }
     }
 }

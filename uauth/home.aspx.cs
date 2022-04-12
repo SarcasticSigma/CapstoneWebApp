@@ -14,7 +14,10 @@ namespace CapstoneWebPage.uauth
 
         }
 
-
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.Redirect("~/uauth/login.aspx");
+        }
     }
 }
 

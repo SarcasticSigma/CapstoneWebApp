@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using System.Text;
+using System.Configuration;
 
 namespace CapstoneWebPage
 {
@@ -13,6 +14,9 @@ namespace CapstoneWebPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Page.Title)) {
+            Page.Title = ConfigurationManager.AppSettings["DefaultTitle"];
+            }
             //Adds event handlers to navigation buttons.
             ancUserHome.ServerClick += new EventHandler(btnUserHome_Click);
             ancAbout.ServerClick += new EventHandler(btnAbout_Click);

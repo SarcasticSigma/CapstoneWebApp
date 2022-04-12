@@ -74,6 +74,16 @@ namespace CapstoneWebPage
             set { id = value; }
         }
 
+        public static bool IdExists(string id) {
+            return id.Substring(0, 3) == "983";
+        }
+
+        public static bool StaffId(string id)
+        {
+            return id[id.Length - 1] == '9';
+        }
+
+
         override public string ToString()
         {
             return $"Name: {FullName} Email: {email} Phone Number: {PhoneNumber} ID: {id} IDType: {idType}";

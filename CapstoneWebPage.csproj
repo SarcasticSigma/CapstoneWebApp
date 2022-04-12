@@ -70,8 +70,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\AdminDeleteAccount.aspx" />
     <Content Include="auth\about.aspx" />
     <Content Include="auth\account-info.aspx" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\SQUIRE LOGO, COPYWRITTEN Plus Package Transparency.jpg" />
     <Content Include="Testing Pages\addDummyData.aspx" />
     <Content Include="App_Data\SquireDatabase.mdf" />
     <Content Include="App_Data\SquireDatabase_log.ldf">
@@ -95,6 +98,13 @@
     <Content Include="auth\view-packages.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\AdminDeleteAccount.aspx.cs">
+      <DependentUpon>AdminDeleteAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminDeleteAccount.aspx.designer.cs">
+      <DependentUpon>AdminDeleteAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Constants\Roles.cs" />
     <Compile Include="Testing Pages\TestCreateUserWizardEvents.aspx.cs">
       <DependentUpon>TestCreateUserWizardEvents.aspx</DependentUpon>
@@ -267,6 +277,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />

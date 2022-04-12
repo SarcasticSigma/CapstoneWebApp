@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
+    <favicon href="images/favicon.icon"></favicon>
 
-
-    <title></title>
+    <title runat="Server" id="titleTag">SQUIRE - </title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link type="text/css" rel="stylesheet" href="CSS\CapstoneStyle.css">
@@ -29,7 +29,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <footer>
+    <footer style="position:absolute; bottom:0;">
         <!--This heading and its contents need to be purged from the final build.-->
         <h3>Debug Information:</h3>
         <ul>
@@ -39,11 +39,16 @@
             <li>
                 <asp:Literal ID="Users" runat="server"></asp:Literal>
             </li>
+<li><asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath></li>
      
             </ul>
         <!--This heading and its contents need major revision.-->
+        
         <h3>Legal information</h3>
+        
         <a href="legal.aspx"></a>
+
+
     </footer>
 </body>
 </html>

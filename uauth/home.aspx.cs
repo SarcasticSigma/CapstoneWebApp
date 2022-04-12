@@ -11,12 +11,10 @@ namespace CapstoneWebPage.uauth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ancLogin.ServerClick += new EventHandler(ancLogin_Click);
+
         }
-        protected void ancLogin_Click(object sender, EventArgs e)
-        {
-            HttpContext.Current.Response.Redirect("~/uauth/login.aspx");
-        }
+
+
     }
-    
 }
+

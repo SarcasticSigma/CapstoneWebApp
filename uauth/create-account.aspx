@@ -4,9 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" CancelButtonDestinationPageUrl="~/uauth/home.aspx" ContinueDestinationPageUrl="~/auth/user-home.aspx">
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" RequireEmail="false" CancelButtonDestinationPageUrl="~/uauth/home.aspx" ContinueDestinationPageUrl="~/auth/user-home.aspx">
         <WizardSteps>
-            <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server" >
+            <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                 <ContentTemplate>
                     <table>
                         <tr>
@@ -40,21 +40,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td align="right">
-                                <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">E-mail:</asp:Label>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="Email" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" ErrorMessage="E-mail is required." ToolTip="E-mail is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                        <tr>
                             <td align="center" colspan="2">
                                 <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match." ValidationGroup="CreateUserWizard1"></asp:CompareValidator>
                             </td>
                         </tr>
                         <tr>
-                            <td align="center" colspan="2" style="color:Red;">
+                            <td align="center" colspan="2" style="color: Red;">
                                 <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
                             </td>
                         </tr>

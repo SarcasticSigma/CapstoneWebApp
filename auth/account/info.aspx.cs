@@ -12,28 +12,22 @@ namespace CapstoneWebPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student"))
+
+            if (Membership.GetUser() == null) {
+                HttpContext.Current.Response.Redirect("~/uauth/login.aspx");
+            }
+            if (!Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student") || !Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Staff"))
             {
-                MessageBox
-                
-                Roles.AddUserToRole(Membership.GetUser().UserName, "Student");
+                HttpContext.Current.Response.Redirect("~/auth/account/add-id.aspx");    
             }
 
-
-            if ()
-            SWORDSDatabaseConnection SWORDS = new SWORDSDatabaseConnection();
-            
-            
             MembershipUser user = Membership.GetUser();
-
             txtUsername.Text = user.UserName;
-            txtEmail.Text = user.Email;
-            txtName.Text = SWORDS.FullName;
-            
-            if (!Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student"))
-            {
-                
-            }
+            txtEmail.Text = HttpContext.Current.Profile.GetPropertyValue("Email") as string;
+            txtMGAId.Text = HttpContext.Current.Profile.GetPropertyValue("MGAId") as string;
+            txtName.Text = HttpContext.Current.Profile.GetPropertyValue("FullName") as string;
+            txtPhoneNumber.Text = HttpContext.Current.Profile.GetPropertyValue("PhoneNumber") as string;
+            txtStudentType.Text = HttpContext.Current.Profile.GetPropertyValue("ResidentialStatus") as string;
 
         }
 

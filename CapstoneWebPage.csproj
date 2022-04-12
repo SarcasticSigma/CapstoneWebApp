@@ -71,7 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\AdminAddRole.aspx" />
+    <Content Include="admin\AdminAssignRole.aspx" />
     <Content Include="admin\AdminDeleteAccount.aspx" />
+    <Content Include="uauth\AdminDebug.aspx" />
     <Content Include="auth\account\add-id.aspx" />
     <Content Include="uauth\about.aspx" />
     <Content Include="auth\account\info.aspx" />
@@ -105,12 +107,26 @@
     <Compile Include="admin\AdminAddRole.aspx.designer.cs">
       <DependentUpon>AdminAddRole.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\AdminAssignRole.aspx.cs">
+      <DependentUpon>AdminAssignRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminAssignRole.aspx.designer.cs">
+      <DependentUpon>AdminAssignRole.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\AdminDeleteAccount.aspx.cs">
       <DependentUpon>AdminDeleteAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\AdminDeleteAccount.aspx.designer.cs">
       <DependentUpon>AdminDeleteAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uauth\AdminDebug.aspx.cs">
+      <DependentUpon>AdminDebug.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uauth\AdminDebug.aspx.designer.cs">
+      <DependentUpon>AdminDebug.aspx</DependentUpon>
     </Compile>
     <Compile Include="auth\account\add-id.aspx.cs">
       <DependentUpon>add-id.aspx</DependentUpon>
@@ -232,8 +248,6 @@
     <Compile Include="uauth\signout.aspx.designer.cs">
       <DependentUpon>signout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomClasses\Staff.cs" />
-    <Compile Include="CustomClasses\Student.cs" />
     <Compile Include="CustomClasses\SWORDSDatabaseConnection.cs" />
     <Compile Include="auth\student\view-packages.aspx.cs">
       <DependentUpon>view-packages.aspx</DependentUpon>

@@ -19,42 +19,7 @@ namespace CapstoneWebPage
 
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-            /*
-            //Potential SQL INJECTION
-            if (txtUsername.Text == "Sigma" && txtPassword.Text == "123")
-            {
-                FormsAuthentication.RedirectFromLoginPage(txtUsername.Text, false);
-            }
-            else {
-                lblOutput.Text = "Error: Username or password incorrect!";
-                lblOutput.Style.Add("color", "red");
-            }
-
-
-            
-            HashAlgorithm sha = SHA256.Create();
-
-            System.IO.MemoryStream mStrm = new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes(txtPassword.Text));
-            byte[] result = sha.ComputeHash(mStrm);
-
-
-            String hash = BitConverter.ToString(result);
-            StringBuilder sb = new StringBuilder();
-            foreach (char c in hash)
-            {
-                if (c != '-')
-                {
-                    sb.Append(c);
-                }
-            }
-            String finalHash = sb.ToString();
-            lblOutput.Text = "Output:" + txtUsername.Text + " " + txtPassword.Text + "\nHash: " + finalHash;
-
-            */
-
-        }
+    
 
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
@@ -63,11 +28,13 @@ namespace CapstoneWebPage
 
         protected void Login1_LoggedIn(object sender, EventArgs e)
         {
-            if (Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student"))
+
+
+            if (Roles.GetRolesForUser(Login1.UserName).Contains("Student"))
             {
-                Login1.DestinationPageUrl="~/auth/student/user-home.aspx";
+                Login1.DestinationPageUrl = "~/auth/student/user-home.aspx";
             }
-            
+
         }
     }
 }

@@ -11,10 +11,12 @@ namespace CapstoneWebPage.auth.account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student") || Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Staff"))
+            string currentUser = Membership.GetUser().UserName;
+            if (Roles.GetRolesForUser(currentUser).Contains("Student") || Roles.GetRolesForUser(currentUser).Contains("Staff"))
             {
                 HttpContext.Current.Response.Redirect("~/auth/account/info.aspx");
             }
+            
 
         }
 
@@ -32,7 +34,16 @@ namespace CapstoneWebPage.auth.account
             //Add a corresponding role based on whether the user is a student or staff member and add their MGA id to their profile.
             if (SWORDSDatabaseConnection.IdExists(inputId))
             {
+
+                //Add fake data to profile. - Potentially change this to accept JSON.
+                SWORDSDatabaseConnection SWORDS = new SWORDSDatabaseConnection(inputId);
                 HttpContext.Current.Profile.SetPropertyValue("MGAId", txtMGAId.Text.Trim());
+                HttpContext.Current.Profile.SetPropertyValue("Email", SWORDS.Email);
+                HttpContext.Current.Profile.SetPropertyValue("FullName", SWORDS.FullName);
+                HttpContext.Current.Profile.SetPropertyValue("PhoneNumber", SWORDS.PhoneNumber);
+                HttpContext.Current.Profile.SetPropertyValue("ResidentialStatus", SWORDS.ResidentialStatus);
+
+
                 if (SWORDSDatabaseConnection.IsStaffId(inputId))
                 {
                     Roles.AddUserToRole(username, "Staff");
@@ -45,7 +56,8 @@ namespace CapstoneWebPage.auth.account
                     throw new ArgumentException("MGA ID's must be either student or staff.");
                 }
             }
-            
+
+
             
             
             HttpContext.Current.Response.Redirect("~/auth/account/info.aspx");

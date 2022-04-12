@@ -11,7 +11,7 @@
             
         }
     </script>
-    <asp:Login ID="Login1" runat="server" OnLoginError="OnLoginError" DestinationPageUrl="~/uauth/account/info.aspx" OnLoggedIn="Login1_LoggedIn" >
+    <asp:Login ID="Login1" runat="server" OnLoginError="OnLoginError" DestinationPageUrl="~/auth/account/info.aspx" OnLoggedIn="Login1_LoggedIn" >
         <LayoutTemplate>
             <asp:Panel runat="server" DefaultButton="LoginButton">
             <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">

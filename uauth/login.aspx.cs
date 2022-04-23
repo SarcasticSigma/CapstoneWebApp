@@ -38,12 +38,17 @@ namespace CapstoneWebPage
 
         protected void Login1_LoggedIn(object sender, EventArgs e)
         {
-
+            
             Session.Add("UserName", Login1.UserName);
             if (Roles.GetRolesForUser(Login1.UserName).Contains("Student"))
             {
                 Login1.DestinationPageUrl = "~/auth/student/user-home.aspx";
             }
+
+        }
+
+        protected void Login1_LoginError(object sender, EventArgs e)
+        {
 
         }
     }

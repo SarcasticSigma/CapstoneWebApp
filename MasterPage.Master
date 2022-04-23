@@ -4,14 +4,14 @@
 <html>
 <head runat="server">
     <link rel="shortcut icon" href="images/favicon.icon" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.icon" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.icon" type="image/x-icon" />
 
 
 
     <title runat="Server" id="titleTag">SQUIRE - </title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link type="text/css" rel="stylesheet" href="CSS\CapstoneStyle.css">
+    <link type="text/css" rel="stylesheet" href="/CSS/CapstoneStyle.css">
 </head>
 <body>
     <header>
@@ -44,7 +44,9 @@
                 <asp:Literal ID="SessionUsername" runat="server"></asp:Literal>
             </li>
 
-
+           
+                <asp:Literal ID="debugOut" runat="server" Text="Debug Out:"></asp:Literal>
+           
         </ul>
 
         <!--This heading and its contents need major revision.-->

@@ -77,6 +77,7 @@
     <Content Include="auth\staff\packages.aspx" />
     <Content Include="auth\student\new-package.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\MGA Logo.png" />
     <Content Include="uauth\AdminDebug.aspx" />
     <Content Include="auth\account\add-id.aspx" />
     <Content Include="uauth\about.aspx" />
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="admin\AdminDeleteAccount.aspx.designer.cs">
       <DependentUpon>AdminDeleteAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="auth\auth-master.Master.cs">
+      <DependentUpon>auth-master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auth\auth-master.Master.designer.cs">
+      <DependentUpon>auth-master.Master</DependentUpon>
     </Compile>
     <Compile Include="auth\staff\add-shipper.aspx.cs">
       <DependentUpon>add-shipper.aspx</DependentUpon>
@@ -304,12 +312,20 @@
     <Compile Include="Testing Pages\TestUserRetrival.aspx.designer.cs">
       <DependentUpon>TestUserRetrival.aspx</DependentUpon>
     </Compile>
+    <Compile Include="uauth\uauth-master.Master.cs">
+      <DependentUpon>uauth-master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uauth\uauth-master.Master.designer.cs">
+      <DependentUpon>uauth-master.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <Content Include="auth\account\Web.config" />
     <Content Include="admin\Web.config" />
     <Content Include="auth\staff\Staff.config" />
+    <Content Include="auth\auth-master.Master" />
     <None Include="packages.config" />
     <Content Include="Testing Pages\TestLogin.aspx" />
     <Content Include="Testing Pages\TestUserAdd.aspx" />
@@ -317,6 +333,7 @@
     <Content Include="Web.config" />
     <Content Include="auth\student\Web.config" />
     <Content Include="uauth\Web.config" />
+    <Content Include="uauth\uauth-master.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

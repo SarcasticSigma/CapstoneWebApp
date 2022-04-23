@@ -13,6 +13,7 @@ namespace CapstoneWebPage
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            /*
             if (Membership.GetUser() == null) {
                 HttpContext.Current.Response.Redirect("~/uauth/login.aspx");
             }
@@ -21,14 +22,14 @@ namespace CapstoneWebPage
                 HttpContext.Current.Response.Redirect("~/auth/account/add-id.aspx");    
             }
 
-            MembershipUser user = Membership.GetUser();
+            
             txtUsername.Text = user.UserName;
             txtEmail.Text = HttpContext.Current.Profile.GetPropertyValue("Email") as string;
             txtMGAId.Text = HttpContext.Current.Profile.GetPropertyValue("MGAId") as string;
             txtName.Text = HttpContext.Current.Profile.GetPropertyValue("FullName") as string;
             txtPhoneNumber.Text = HttpContext.Current.Profile.GetPropertyValue("PhoneNumber") as string;
             txtStudentType.Text = HttpContext.Current.Profile.GetPropertyValue("ResidentialStatus") as string;
-
+            */
         }
 
         protected void Button1_Click(object sender, EventArgs e)

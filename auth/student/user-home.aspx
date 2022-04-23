@@ -10,25 +10,27 @@
     <asp:TextBox runat="server" ID="txtSearch"></asp:TextBox>
     <asp:Button runat="server" ID="btnSubmit" Text="Submit" />
 
-    <asp:SqlDataSource ID="sdsPackages" runat="server" ConnectionString="<%$ ConnectionStrings:MainSquireDatabase %>" SelectCommand="SELECT * FROM [Package]"></asp:SqlDataSource>
-    <%--  --%>
-    <!--
+    <asp:SqlDataSource ID="sdsPackages" runat="server" ConnectionString="<%$ ConnectionStrings:MainSquireDatabase %>" SelectCommand="SELECT * FROM [Packages] 
+INNER JOIN ShippingCompanies ON  Packages.ShippingCompanyId = ShippingCompanies.CompanyId 
+INNER JOIN aspnet_Users ON Packages.StudentId = aspnet_Users.UserId WHERE Username = @Username
+">
+        <SelectParameters>
+            <asp:SessionParameter Name="Username" SessionField="UserName" />
+        </SelectParameters>
+        </asp:SqlDataSource>
 
-        https://stackoverflow.com/questions/14472016/how-to-make-gridview-in-asp-net-scrollable
-        Make GV scrollable
-        -->
-    <asp:GridView ID="gvPackages" runat="server" AutoGenerateColumns="False" DataKeyNames="PackageId" DataSourceID="sdsPackages" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None">
+    <asp:GridView ID="gvPackages" runat="server" AutoGenerateColumns="False" DataKeyNames="PackageId,CompanyId,ApplicationId,LoweredUserName" DataSourceID="sdsPackages" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None">
         <Columns>
             
             <asp:BoundField DataField="PackageId" HeaderText="PackageId" InsertVisible="False" ReadOnly="True" SortExpression="PackageId" />
-            <asp:BoundField DataField="OwnerId" HeaderText="OwnerId" SortExpression="OwnerId" />
+            <asp:BoundField DataField="StudentId" HeaderText="StudentId" SortExpression="StudentId" />
             <asp:BoundField DataField="TrackingNumber" HeaderText="TrackingNumber" SortExpression="TrackingNumber" />
-            <asp:BoundField DataField="ExpectedArrivalDate" HeaderText="ExpectedArrivalDate" SortExpression="ExpectedArrivalDate" />
             <asp:BoundField DataField="ArrivalDate" HeaderText="ArrivalDate" SortExpression="ArrivalDate" />
-            <asp:BoundField DataField="RetrievalDate" HeaderText="RetrievalDate" SortExpression="RetrievalDate" />
-            <asp:BoundField DataField="StorageLockerNumber" HeaderText="StorageLockerNumber" SortExpression="StorageLockerNumber" />
+            <asp:BoundField DataField="DisposalDate" HeaderText="DisposalDate" SortExpression="DisposalDate" />
+            <asp:BoundField DataField="LockerNumber" HeaderText="LockerNumber" SortExpression="LockerNumber" />
             <asp:BoundField DataField="AccruedFees" HeaderText="AccruedFees" SortExpression="AccruedFees"/>
-            <asp:CommandField ShowSelectButton="True" ItemStyle-CssClass="SelectButton" />
+            <asp:BoundField DataField="CompanyName" HeaderText="CompanyName" SortExpression="CompanyName" />
+            <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
         </Columns>
         <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />

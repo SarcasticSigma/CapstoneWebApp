@@ -3,7 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <favicon href="images/favicon.icon"></favicon>
+    <link rel="shortcut icon" href="images/favicon.icon" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.icon" type="image/x-icon" />
+
+
 
     <title runat="Server" id="titleTag">SQUIRE - </title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -29,23 +32,25 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <footer style="bottom:0;">
+    <footer style="bottom: 0;">
+
         <!--This heading and its contents need to be purged from the final build.-->
         <h3>Debug Information:</h3>
         <ul>
             <li>
-        <asp:Literal ID="LoggedIn" runat="server"></asp:Literal>
-                </li>
-            <li>
-                <asp:Literal ID="Users" runat="server"></asp:Literal>
+                <asp:Literal ID="LoggedIn" runat="server"></asp:Literal>
             </li>
-<li><asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath></li>
-     
-            </ul>
+            <li>
+                <asp:Literal ID="SessionUsername" runat="server"></asp:Literal>
+            </li>
+
+
+        </ul>
+
         <!--This heading and its contents need major revision.-->
-        
+
         <h3>Legal information</h3>
-        
+
         <a href="legal.aspx"></a>
 
 

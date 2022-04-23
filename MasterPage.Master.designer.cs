@@ -105,21 +105,12 @@ namespace CapstoneWebPage
         protected global::System.Web.UI.WebControls.Literal LoggedIn;
 
         /// <summary>
-        /// Users control.
+        /// SessionUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Users;
-
-        /// <summary>
-        /// SiteMapPath1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
+        protected global::System.Web.UI.WebControls.Literal SessionUsername;
     }
 }

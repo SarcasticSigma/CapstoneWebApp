@@ -73,6 +73,10 @@
     <Content Include="admin\AdminAddRole.aspx" />
     <Content Include="admin\AdminAssignRole.aspx" />
     <Content Include="admin\AdminDeleteAccount.aspx" />
+    <Content Include="auth\staff\add-shipper.aspx" />
+    <Content Include="auth\staff\packages.aspx" />
+    <Content Include="auth\student\new-package.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="uauth\AdminDebug.aspx" />
     <Content Include="auth\account\add-id.aspx" />
     <Content Include="uauth\about.aspx" />
@@ -120,6 +124,30 @@
     </Compile>
     <Compile Include="admin\AdminDeleteAccount.aspx.designer.cs">
       <DependentUpon>AdminDeleteAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="auth\staff\add-shipper.aspx.cs">
+      <DependentUpon>add-shipper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auth\staff\add-shipper.aspx.designer.cs">
+      <DependentUpon>add-shipper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="auth\staff\packages.aspx.cs">
+      <DependentUpon>packages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auth\staff\packages.aspx.designer.cs">
+      <DependentUpon>packages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="auth\student\new-package.aspx.cs">
+      <DependentUpon>new-package.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auth\student\new-package.aspx.designer.cs">
+      <DependentUpon>new-package.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="uauth\AdminDebug.aspx.cs">
       <DependentUpon>AdminDebug.aspx</DependentUpon>
@@ -178,7 +206,6 @@
     <Compile Include="uauth\legal.aspx.designer.cs">
       <DependentUpon>legal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Seeds\DefaultRoles.cs" />
     <Compile Include="uauth\about.aspx.cs">
       <DependentUpon>about.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +309,7 @@
     <Content Include="MasterPage.Master" />
     <Content Include="auth\account\Web.config" />
     <Content Include="admin\Web.config" />
+    <Content Include="auth\staff\Staff.config" />
     <None Include="packages.config" />
     <Content Include="Testing Pages\TestLogin.aspx" />
     <Content Include="Testing Pages\TestUserAdd.aspx" />

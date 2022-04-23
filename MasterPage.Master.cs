@@ -14,6 +14,7 @@ namespace CapstoneWebPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrEmpty(Page.Title)) {
             Page.Title = ConfigurationManager.AppSettings["DefaultTitle"];
             }
@@ -24,16 +25,12 @@ namespace CapstoneWebPage
             ancViewPackages.ServerClick += new EventHandler(btnViewPackages_Click);
             ancSignout.ServerClick += new EventHandler(btnLogout_Click);
 
-            
-            StringBuilder sb = new StringBuilder();
-            //Generates a string representing all users in the database.
-            foreach (MembershipUser user in Membership.GetAllUsers())
-            {
-                String username = user.UserName;
-                String email = user.Email;
-                sb.Append($"Username: {username} Email: {email}\n");
-            }
-            Users.Text = sb.ToString();
+
+            displayDebugInformation();
+
+        }
+
+        private void displayDebugInformation() {
             
             //Shows authentication information
             if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated == true)
@@ -44,28 +41,29 @@ namespace CapstoneWebPage
             {
                 LoggedIn.Text = "Not currently Logged In";
             }
-
+            SessionUsername.Text = Session.Contents["Username"] as string;
         }
-                
+
         //Click Handlers
         protected void btnUserHome_Click(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.Redirect("~/auth/user-home.aspx");
+            HttpContext.Current.Response.Redirect("~/auth/student/user-home.aspx");
         }
         protected void btnAbout_Click(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.Redirect("~/auth/about.aspx");
+            HttpContext.Current.Response.Redirect("~/uauth/about.aspx");
         }
         protected void btnAccountInformation_Click(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.Redirect("~/auth/account-info.aspx");
+            HttpContext.Current.Response.Redirect("~/auth/account/info.aspx");
         }
         protected void btnViewPackages_Click(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.Redirect("~/auth/view-packages.aspx");
+            HttpContext.Current.Response.Redirect("~/auth/student/view-packages.aspx");
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
+            Session.Remove("UserName");
             FormsAuthentication.SignOut();
             HttpContext.Current.Response.Redirect("~/uauth/home.aspx");
         }

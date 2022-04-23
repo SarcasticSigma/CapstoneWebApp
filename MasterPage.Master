@@ -22,7 +22,7 @@
                 <li><a id="ancAccountInformation" runat="server" class="navitem" href="#">Account Information</a></li>
                 <li><a id="ancViewPackages" runat="server" class="navitem" href="#">View Packages</a></li>
                 <li><a id="ancSignout" runat="server" class="navitem" href="#">Signout</a></li>
-
+                <li><a id="ancNewPackage" runat="server" class="navItem" href="#">New Package</a></li>
             </ul>
         </div>
     </header>

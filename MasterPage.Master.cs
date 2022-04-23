@@ -24,6 +24,7 @@ namespace CapstoneWebPage
             ancAccountInformation.ServerClick += new EventHandler(btnAccountInformation_Click);
             ancViewPackages.ServerClick += new EventHandler(btnViewPackages_Click);
             ancSignout.ServerClick += new EventHandler(btnLogout_Click);
+            ancNewPackage.ServerClick += new EventHandler(btnNewPackage_Click);
 
 
             displayDebugInformation();
@@ -45,6 +46,9 @@ namespace CapstoneWebPage
         }
 
         //Click Handlers
+        protected void btnNewPackage_Click(object sender, EventArgs e) {
+            HttpContext.Current.Response.Redirect("~/auth/student/add-package.aspx");
+        }
         protected void btnUserHome_Click(object sender, EventArgs e)
         {
             HttpContext.Current.Response.Redirect("~/auth/student/user-home.aspx");

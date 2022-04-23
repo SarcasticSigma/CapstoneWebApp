@@ -12,7 +12,7 @@
 
     <asp:SqlDataSource ID="sdsPackages" runat="server" ConnectionString="<%$ ConnectionStrings:MainSquireDatabase %>" SelectCommand="SELECT * FROM [Packages] 
 INNER JOIN ShippingCompanies ON  Packages.ShippingCompanyId = ShippingCompanies.CompanyId 
-INNER JOIN aspnet_Users ON Packages.StudentId = aspnet_Users.UserId WHERE Username = @Username
+INNER JOIN aspnet_Users ON Packages.OwnerId = aspnet_Users.UserId WHERE Username = @Username
 ">
         <SelectParameters>
             <asp:SessionParameter Name="Username" SessionField="UserName" />
@@ -23,15 +23,12 @@ INNER JOIN aspnet_Users ON Packages.StudentId = aspnet_Users.UserId WHERE Userna
         <Columns>
             
             <asp:BoundField DataField="PackageId" HeaderText="PackageId" InsertVisible="False" ReadOnly="True" SortExpression="PackageId" />
-            <asp:BoundField DataField="StudentId" HeaderText="StudentId" SortExpression="StudentId" />
             <asp:BoundField DataField="TrackingNumber" HeaderText="TrackingNumber" SortExpression="TrackingNumber" />
-            <asp:BoundField DataField="ArrivalDate" HeaderText="ArrivalDate" SortExpression="ArrivalDate" />
-            <asp:BoundField DataField="DisposalDate" HeaderText="DisposalDate" SortExpression="DisposalDate" />
+            <asp:BoundField DataField="ExpectedArrivalDate" HeaderText="ExpectedArrivalDate" SortExpression="ExpectedArrivalDate" />
+            <asp:BoundField DataField="ArrivalDate" HeaderText="ArrivalDate" SortExpression="ArrivalDate"/>
             <asp:BoundField DataField="LockerNumber" HeaderText="LockerNumber" SortExpression="LockerNumber" />
-            <asp:BoundField DataField="AccruedFees" HeaderText="AccruedFees" SortExpression="AccruedFees"/>
             <asp:BoundField DataField="CompanyName" HeaderText="CompanyName" SortExpression="CompanyName" />
             <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
-            <asp:ButtonField Text="View" />
         </Columns>
         <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />

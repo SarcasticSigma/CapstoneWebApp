@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="view-packages.aspx.cs" Inherits="CapstoneWebPage.view_packages" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="view-package.aspx.cs" Inherits="CapstoneWebPage.view_packages" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>View Packages</title>

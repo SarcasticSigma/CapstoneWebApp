@@ -13,23 +13,26 @@ namespace CapstoneWebPage
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            /*
-            if (Membership.GetUser() == null) {
-                HttpContext.Current.Response.Redirect("~/uauth/login.aspx");
-            }
-            if (!Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student") || !Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Staff"))
+            MembershipUser user = Membership.GetUser();
+            string[] currentUserRoles = Roles.GetRolesForUser();
+            if (currentUserRoles.Contains("Admin") || currentUserRoles.Contains("Student"))
+
             {
-                HttpContext.Current.Response.Redirect("~/auth/account/add-id.aspx");    
+                txtUsername.Text = user.UserName;
+                txtEmail.Text = HttpContext.Current.Profile.GetPropertyValue("Email") as string;
+                txtMGAId.Text = HttpContext.Current.Profile.GetPropertyValue("MGAId") as string;
+                txtName.Text = HttpContext.Current.Profile.GetPropertyValue("FullName") as string;
+                txtPhoneNumber.Text = HttpContext.Current.Profile.GetPropertyValue("PhoneNumber") as string;
+                txtStudentType.Text = HttpContext.Current.Profile.GetPropertyValue("ResidentialStatus") as string;
+
             }
 
-            
-            txtUsername.Text = user.UserName;
-            txtEmail.Text = HttpContext.Current.Profile.GetPropertyValue("Email") as string;
-            txtMGAId.Text = HttpContext.Current.Profile.GetPropertyValue("MGAId") as string;
-            txtName.Text = HttpContext.Current.Profile.GetPropertyValue("FullName") as string;
-            txtPhoneNumber.Text = HttpContext.Current.Profile.GetPropertyValue("PhoneNumber") as string;
-            txtStudentType.Text = HttpContext.Current.Profile.GetPropertyValue("ResidentialStatus") as string;
-            */
+            else
+            {
+                HttpContext.Current.Response.Redirect("~/auth/account/add-id.aspx");
+            }
+
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)

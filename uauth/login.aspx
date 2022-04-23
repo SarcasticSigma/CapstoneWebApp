@@ -55,6 +55,10 @@
             border-radius: 50%;
         }
 
+        .requiredAstrisk {
+            color: red;
+        }
+
         .container {
             padding: 16px;
         }
@@ -97,26 +101,26 @@
                                 <table class="login loginTable" cellpadding="0">
                                     <tr>
                                         <td align="left">
-                                            <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+                                            <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Username</asp:Label><asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1" CssClass="requiredAstrisk">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
 
                                         <td>
                                             <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="left">
-                                            <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                                            <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password</asp:Label><asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1" CssClass="requiredAstrisk">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
 
                                         <td>
                                             <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+
                                         </td>
                                     </tr>
                                     <tr>
@@ -130,7 +134,7 @@
                                 <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" CssClass="Loginbutton" />
                             </td>
                         </tr>
- 
+
                     </table>
                     </td>
                 </tr>

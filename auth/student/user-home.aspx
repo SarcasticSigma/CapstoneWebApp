@@ -31,6 +31,7 @@ INNER JOIN aspnet_Users ON Packages.StudentId = aspnet_Users.UserId WHERE Userna
             <asp:BoundField DataField="AccruedFees" HeaderText="AccruedFees" SortExpression="AccruedFees"/>
             <asp:BoundField DataField="CompanyName" HeaderText="CompanyName" SortExpression="CompanyName" />
             <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
+            <asp:ButtonField Text="View" />
         </Columns>
         <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />

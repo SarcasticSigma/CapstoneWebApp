@@ -1,9 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="legal.aspx.cs" Inherits="CapstoneWebPage.legal" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="legal.aspx.cs" Inherits="CapstoneWebPage.legal" %>
 
 
 <div class="legal">
@@ -55,4 +50,3 @@
 </div>
 
 
-</asp:Content>

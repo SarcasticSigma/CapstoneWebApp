@@ -42,6 +42,15 @@ namespace CapstoneWebPage
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ancUserHome;
 
         /// <summary>
+        /// ancNewPackage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ancNewPackage;
+
+        /// <summary>
         /// ancAbout control.
         /// </summary>
         /// <remarks>
@@ -60,15 +69,6 @@ namespace CapstoneWebPage
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ancAccountInformation;
 
         /// <summary>
-        /// ancViewPackages control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor ancViewPackages;
-
-        /// <summary>
         /// ancSignout control.
         /// </summary>
         /// <remarks>
@@ -76,15 +76,6 @@ namespace CapstoneWebPage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ancSignout;
-
-        /// <summary>
-        /// ancNewPackage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor ancNewPackage;
 
         /// <summary>
         /// form1 control.
@@ -103,32 +94,5 @@ namespace CapstoneWebPage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-
-        /// <summary>
-        /// LoggedIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LoggedIn;
-
-        /// <summary>
-        /// SessionUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal SessionUsername;
-
-        /// <summary>
-        /// debugOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal debugOut;
     }
 }

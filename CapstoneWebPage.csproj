@@ -82,14 +82,12 @@
     <Content Include="auth\account\add-id.aspx" />
     <Content Include="uauth\about.aspx" />
     <Content Include="auth\account\info.aspx" />
-    <Content Include="images\favicon.ico" />
     <Content Include="images\SQUIRE LOGO, COPYWRITTEN Plus Package Transparency.jpg" />
     <Content Include="Testing Pages\addDummyData.aspx" />
     <Content Include="App_Data\SquireDatabase.mdf" />
     <Content Include="App_Data\SquireDatabase_log.ldf">
       <DependentUpon>SquireDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="uauth\Legal Disclaimer.html" />
     <Content Include="Testing Pages\TestCreateUserWizardEvents.aspx" />
     <Content Include="Testing Pages\TestProfile.aspx" />
     <Content Include="Testing Pages\TestProfileDataGet.aspx" />
@@ -98,7 +96,6 @@
     <Content Include="uauth\legal.aspx" />
     <Content Include="CSS\CapstoneStyle.css" />
     <Content Include="auth\student\user-home.aspx" />
-    <Content Include="uauth\home.aspx" />
     <Content Include="uauth\login.aspx" />
     <Content Include="uauth\PageNotFound.aspx" />
     <Content Include="auth\student\view-package.aspx" />
@@ -170,7 +167,6 @@
     <Compile Include="auth\account\add-id.aspx.designer.cs">
       <DependentUpon>add-id.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Constants\Roles.cs" />
     <Compile Include="Testing Pages\TestCreateUserWizardEvents.aspx.cs">
       <DependentUpon>TestCreateUserWizardEvents.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,13 +241,6 @@
     </Compile>
     <Compile Include="auth\student\user-home.aspx.designer.cs">
       <DependentUpon>user-home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="uauth\home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="uauth\home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="uauth\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

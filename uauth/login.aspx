@@ -32,6 +32,8 @@
             border: none;
             cursor: pointer;
             width: 100%;
+            border-radius:10px;
+              font-size:16px;
         }
 
             .Loginbutton:hover {
@@ -43,6 +45,13 @@
             width: auto;
             padding: 10px 18px;
             background-color: #909497;
+            cursor:pointer;
+            border:none;
+            border-radius:10px;
+              font-size:16px;
+        }
+        .createAccountButton:hover{
+            opacity:0.8;
         }
 
         .imgcontainer {
@@ -55,7 +64,7 @@
             border-radius: 50%;
         }
 
-        .requiredAstrisk {
+    .requiredAstrisk {
             color: red;
         }
 
@@ -72,7 +81,7 @@
         @media screen and (max-width: 300px) {
             span.psw {
                 display: block;
-                float: none;
+                float: none;  
             }
 
             .cancelbtn {
@@ -146,6 +155,6 @@
 
     <div class="container" style="background-color: #f1f1f1">
         <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" OnClick="btnCreateAccount_Click" CssClass="createAccountButton" />
-        <span class="psw">Forgot <a href="~/uauth/forgot-password.aspx">password?</a></span>
+        <span class="psw">Forgot <a href="forgot-password.aspx">password?</a></span>
     </div>
 </asp:Content>

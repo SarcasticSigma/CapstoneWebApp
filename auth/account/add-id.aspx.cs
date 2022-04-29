@@ -14,27 +14,12 @@ namespace CapstoneWebPage.auth.account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            string currentUser = Membership.GetUser().UserName;
-            if (Roles.GetRolesForUser(currentUser).Contains("Student") || Roles.GetRolesForUser(currentUser).Contains("Staff"))
-            {
-                HttpContext.Current.Response.Redirect("~/auth/account/info.aspx");
-            }
-            */
+
 
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            /*
-        
-            //If the user has already been assigned a role, redirect them away.
-            if (Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Student") || Roles.GetRolesForUser(Membership.GetUser().UserName).Contains("Staff"))
-            {
-                HttpContext.Current.Response.Redirect("~/auth/account/info.aspx");
-            }
-            
-             */
             Page.Validate();
             if (Page.IsValid)
             {

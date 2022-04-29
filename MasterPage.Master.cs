@@ -22,32 +22,15 @@ namespace CapstoneWebPage
             ancUserHome.ServerClick += new EventHandler(btnUserHome_Click);
             ancAbout.ServerClick += new EventHandler(btnAbout_Click);
             ancAccountInformation.ServerClick += new EventHandler(btnAccountInformation_Click);
-            ancViewPackages.ServerClick += new EventHandler(btnViewPackages_Click);
             ancSignout.ServerClick += new EventHandler(btnLogout_Click);
             ancNewPackage.ServerClick += new EventHandler(btnNewPackage_Click);
-
-
-            displayDebugInformation();
-
         }
 
-        private void displayDebugInformation() {
-            
-            //Shows authentication information
-            if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated == true)
-            {
-                LoggedIn.Text = $"Currently Logged in as {Membership.GetUser().UserName}";
-            }
-            else
-            {
-                LoggedIn.Text = "Not currently Logged In";
-            }
-            SessionUsername.Text = Session.Contents["Username"] as string;
-        }
+       
 
         //Click Handlers
         protected void btnNewPackage_Click(object sender, EventArgs e) {
-            HttpContext.Current.Response.Redirect("~/auth/student/add-package.aspx");
+            HttpContext.Current.Response.Redirect("~/auth/student/new-package.aspx");
         }
         protected void btnUserHome_Click(object sender, EventArgs e)
         {
@@ -61,15 +44,11 @@ namespace CapstoneWebPage
         {
             HttpContext.Current.Response.Redirect("~/auth/account/info.aspx");
         }
-        protected void btnViewPackages_Click(object sender, EventArgs e)
-        {
-            HttpContext.Current.Response.Redirect("~/auth/student/view-packages.aspx");
-        }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session.Remove("UserName");
             FormsAuthentication.SignOut();
-            HttpContext.Current.Response.Redirect("~/uauth/home.aspx");
+            HttpContext.Current.Response.Redirect("~/uauth/login.aspx");
         }
 
     }

@@ -5,57 +5,48 @@
 <head runat="server">
     <link rel="shortcut icon" href="images/favicon.icon" type="image/x-icon" />
     <link rel="icon" href="/images/favicon.icon" type="image/x-icon" />
-
-
-
     <title runat="Server" id="titleTag">SQUIRE - </title>
+    <style>
+        .contentContainer {
+            height: 90vh;
+            min-height: 90vh;
+        }
+    </style>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link type="text/css" rel="stylesheet" href="/CSS/CapstoneStyle.css">
 </head>
 <body>
-    <header>
-        <div id="navbar">
-            <ul>
-                <li><a id="ancUserHome" runat="server" class="navitem" href="#">Home</a></li>
-                <li><a id="ancAbout" runat="server" class="navitem" href="#">About</a></li>
-                <li><a id="ancAccountInformation" runat="server" class="navitem" href="#">Account Information</a></li>
-                <li><a id="ancViewPackages" runat="server" class="navitem" href="#">View Packages</a></li>
-                <li><a id="ancSignout" runat="server" class="navitem" href="#">Signout</a></li>
-                <li><a id="ancNewPackage" runat="server" class="navItem" href="#">New Package</a></li>
-            </ul>
-        </div>
-    </header>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
-    <footer style="bottom: 0;">
+    <div class="contentContainer">
+        <header>
+            <div id="navbar">
+                <ul>
+                    <li><a id="ancUserHome" runat="server" class="navitem" href="#">Home</a></li>
+                    <li><a id="ancNewPackage" runat="server" style="al" class="navitem" href="#">New Package</a></li>
+                    <li><a id="ancAbout" runat="server" class="navitem" href="#">About</a></li>
+                    <li><a id="ancAccountInformation" runat="server" class="navitem" href="#">Account Information</a></li>
+                    <li><a id="ancSignout" style="float:right; border:none;" runat="server"  class="navitem" href="#">Signout</a></li>
+                    
+                </ul>
+            </div>
+        </header>
+        <form id="form1" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
+    <footer >
 
-        <!--This heading and its contents need to be purged from the final build.-->
-        <h3>Debug Information:</h3>
-        <ul>
-            <li>
-                <asp:Literal ID="LoggedIn" runat="server"></asp:Literal>
-            </li>
-            <li>
-                <asp:Literal ID="SessionUsername" runat="server"></asp:Literal>
-            </li>
-
-           
-                <asp:Literal ID="debugOut" runat="server" Text="Debug Out:"></asp:Literal>
-           
-        </ul>
 
         <!--This heading and its contents need major revision.-->
 
-        <h3>Legal information</h3>
-
-        <a href="legal.aspx"></a>
-
+        <h4>Legal information</h4>
+        <span>By using SQUIRE you agree to abide by the MGA's code of conduct as SQUIRE's <a href="/uauth/legal.aspx">terms of service.</a></span>
 
     </footer>
+
 </body>
 </html>

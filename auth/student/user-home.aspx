@@ -27,7 +27,7 @@ INNER JOIN aspnet_Users ON Packages.OwnerId = aspnet_Users.UserId WHERE Username
                 </SelectParameters>
             </asp:SqlDataSource>
 
-            <asp:GridView ID="gvPackages" runat="server" AutoGenerateColumns="False" DataKeyNames="PackageId,CompanyId,ApplicationId,LoweredUserName" DataSourceID="sdsPackages" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None">
+            <asp:GridView ID="gvPackages" ShowHeaderWhenEmpty="true" runat="server" AutoGenerateColumns="False" DataKeyNames="PackageId,CompanyId,ApplicationId,LoweredUserName" DataSourceID="sdsPackages" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None">
                 <Columns>
 
                     <asp:BoundField DataField="PackageId" HeaderText="PackageId" InsertVisible="False" ReadOnly="True" SortExpression="PackageId" />

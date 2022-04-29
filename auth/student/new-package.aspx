@@ -7,12 +7,39 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
 
         .requiredAstrisk {
             color: red;
-
         }
+
+        .Loginbutton {
+            background-color: #9B59B6;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            border-radius: 10px;
+            font-size: 16px;
+            text-align:center;
+        }
+
+            .Loginbutton:hover {
+                opacity: 0.8;
+            }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
 
         .calendar {
             position: absolute;
@@ -28,46 +55,53 @@
         </center>
     </header>
     <div class="container">
-        <table>
+        <table style="width:90%;">
             <tc>
 
 
 
-            <tr>
-                <td>
-                    <asp:Label ID="Label1" runat="server" Text="Tracking Number:"></asp:Label></td>
-                <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label runat="server" ID="LabelShipping" Text="Shipping Company" associatedControlId="DropDownList1"></asp:Label>
-                </td>
-                <td >
-                
-                 <asp:DropDownList style="width:100%; text-align: center;" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CompanyName" DataValueField="CompanyId">
-    </asp:DropDownList>
-        </td>
-                
-                
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></td>
-                <td>
-                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></td>
-                <td>
-                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
-            </tr>
-        </tc>
+                <tr>
+                    <td align="center">
+                        <asp:Label ID="Label1" runat="server" Text="Tracking Number"></asp:Label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:TextBox ID="txtTrackingNumber" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <asp:Label runat="server" ID="LabelShipping" Text="Shipping Company" AssociatedControlID="ddlShippingCompany"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+
+                        <asp:DropDownList ID="ddlShippingCompany" runat="server" DataSourceID="SqlDataSource1" DataTextField="CompanyName" CSSClass="submitButton Loginbutton" DataValueField="CompanyId">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td  align="center">
+                        <asp:Label ID="Label3" runat="server" Text="Expected Date"></asp:Label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:TextBox ID="txtExpectedDate" runat="server"></asp:TextBox></td>
+                </tr>
+
+                <tr>
+
+                    <td align="center">
+                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="submitButton Loginbutton" OnClick="btnSubmit_Click" /></td>
+                </tr>
+            </tc>
 
 
 
         </table>
+        <asp:Label ID="lblOutput" runat="server" Text="You'll recieve an email containing the password required to retrieve your package when it arrives. "></asp:Label>
+
     </div>
 
 

@@ -87,7 +87,7 @@ namespace CapstoneWebPage.auth.student
             {
                 if (InsertNewPackage(txtExpectedDate.Text, txtTrackingNumber.Text, System.Convert.ToInt16(ddlShippingCompany.SelectedItem.Value)))
                 {
-                    int TIMEOUT_MILISECONDS = 5000;
+                    int TIMEOUT_MILISECONDS = 50000;
 
                     lblOutput.Text = "Sucessfully added package!";
                     txtExpectedDate.Text = "";
@@ -129,6 +129,6 @@ namespace CapstoneWebPage.auth.student
                 args.IsValid = false;
             }
         }
-
+ 
     }
 }

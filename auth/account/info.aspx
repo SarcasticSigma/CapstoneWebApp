@@ -11,6 +11,7 @@
 
         .paddingBetweenCols td {
             padding: 10px 15px;
+            
         }
 
             .paddingBetweenCols td:nth-child(even) {

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Text.RegularExpressions;
+
 namespace CapstoneWebPage.auth.student
 
 
@@ -80,55 +81,134 @@ namespace CapstoneWebPage.auth.student
             return false;
         }
 
+        /// <summary>
+        /// Checks the SQL database to see if the entered tracking number is unique to the shipping company selected. 
+        /// </summary>
+        /// <param name="trackingNumber">A string representing a tracking number.</param>
+        /// <returns>A bool represeting whether or not it's unique.</returns>
+        /// <exception cref="ArgumentException">Thrown if the drop down list doesn't have a selected value.</exception>
+        private bool _IsUniqueTrackingNumber(string trackingNumber)
+        {
+            if (ddlShippingCompany.SelectedValue == "none")
+            {
+                throw new ArgumentException("Required drop down list not included.");
+            }
+            String myConString = System.Configuration.ConfigurationManager.ConnectionStrings["MainSquireDatabase"].ConnectionString;
+            String mySQL = "SELECT TrackingNumber, CompanyName FROM Packages INNER JOIN ShippingCompanies ON Packages.ShippingCompanyId = ShippingCompanies.CompanyId";
+            using (SqlConnection myCon = new SqlConnection(myConString))
+            {
+                myCon.Open();
+                using (SqlCommand myCom = new SqlCommand(mySQL, myCon))
+                {
+
+                    using (SqlDataReader reader = myCom.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            string storedTrackingNumber = reader.GetString(0);
+                            string storedShippingCompanyName = reader.GetString(1);
+
+                            if (storedTrackingNumber == txtTrackingNumber.Text && storedShippingCompanyName == ddlShippingCompany.SelectedItem.Text)
+                            {
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+                }
+            }
+        }
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Page.Validate();
             if (Page.IsValid)
             {
                 if (InsertNewPackage(txtExpectedDate.Text, txtTrackingNumber.Text, System.Convert.ToInt16(ddlShippingCompany.SelectedItem.Value)))
                 {
-                    int TIMEOUT_MILISECONDS = 50000;
-
-                    lblOutput.Text = "Sucessfully added package!";
-                    txtExpectedDate.Text = "";
+                    LabelOutput.Text = "Sucessfully added package! You'll recieve an email containing information required to retrieve your package when it arrives.";
                     txtTrackingNumber.Text = "";
-                    ddlShippingCompany.SelectedIndex = 0;
-                    System.Threading.Thread.Sleep(TIMEOUT_MILISECONDS);
-                    lblOutput.Text = "";
+                    txtExpectedDate.Text = "";
+                    ddlShippingCompany.SelectedValue = "none";
                 }
                 else
                 {
-                    lblOutput.Text = "Error inserting package! Please try again!";
+                    LabelOutput.Text = "Error inserting package! Please try again!";
                 }
             }
-
         }
+
+
+
 
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
+            args.IsValid = false;
             if (args.Value == "")
             {
                 args.IsValid = false;
+                LabelOutput.Text = "Error! Please enter a date!";
             }
             Regex rg = new Regex("[0-9][0-9](/|-|\\ )[0-9][0-9](/|-|\\ )[0-9][0-9][0-9][0-9]");
             if (rg.IsMatch(args.Value))
             {
+                string targetDateString = "";
                 char[] targetDate = args.Value.ToCharArray();
                 targetDate[2] = '/';
                 targetDate[5] = '/';
-                string targetDateString = targetDate.ToString();
-
+                foreach (char c in targetDate)
+                {
+                    targetDateString += c;
+                }
+                System.Diagnostics.Debug.WriteLine($"targetDateString:{targetDateString} TryParse:{DateTime.TryParse(targetDateString, out _)}");
                 if (DateTime.TryParse(targetDateString, out _))
                 {
-                    args.IsValid = true;
+                    DateTime targetDateTime = DateTime.Parse(targetDateString);
+                    if (DateTime.Compare(targetDateTime, DateTime.Now) > 0)
+                    {
+                        args.IsValid = true;
+                    }
+                    else
+                    {
+                        args.IsValid = false;
+                        LabelOutput.Text = "Error! That date is in the past!";
+                    }
                 }
-
+                else
+                {
+                    LabelOutput.Text = "Error! That's not a valid date!";
+                }
             }
             else
             {
                 args.IsValid = false;
             }
         }
- 
+
+        protected void TrackingNumberValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (ddlShippingCompany.SelectedValue == "none")
+            {
+                args.IsValid = false;
+                return;
+            }
+            if (args.Value == "" || args.Value == null)
+            {
+                args.IsValid = false;
+            }
+
+            if (_IsUniqueTrackingNumber(args.Value.Trim()))
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+                LabelOutput.Text = "That tracking number has already been associated with a SQUIRE package!";
+            }
+
+
+
+        }
     }
 }

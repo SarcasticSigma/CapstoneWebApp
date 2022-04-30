@@ -23,7 +23,7 @@
             <div id="navbar">
                 <ul>
                     <li><a id="ancUserHome" runat="server" class="navitem" href="#">Home</a></li>
-                    <li><a id="ancNewPackage" runat="server" style="al" class="navitem" href="#">New Package</a></li>
+                    <li><a id="ancNewPackage" runat="server"  class="navitem" href="#">New Package</a></li>
                     <li><a id="ancAbout" runat="server" class="navitem" href="#">About</a></li>
                     <li><a id="ancAccountInformation" runat="server" class="navitem" href="#">Account Information</a></li>
                     <li><a id="ancSignout" style="float:right; border:none;" runat="server"  class="navitem" href="#">Signout</a></li>

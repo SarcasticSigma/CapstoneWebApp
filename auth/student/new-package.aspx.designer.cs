@@ -42,6 +42,15 @@ namespace CapstoneWebPage.auth.student
         protected global::System.Web.UI.WebControls.TextBox txtTrackingNumber;
 
         /// <summary>
+        /// TrackingNumberValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator TrackingNumberValidator;
+
+        /// <summary>
         /// LabelShipping control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace CapstoneWebPage.auth.student
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlShippingCompany;
+
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
         /// Label3 control.
@@ -78,6 +96,15 @@ namespace CapstoneWebPage.auth.student
         protected global::System.Web.UI.WebControls.TextBox txtExpectedDate;
 
         /// <summary>
+        /// CustomValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+
+        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>
@@ -87,12 +114,12 @@ namespace CapstoneWebPage.auth.student
         protected global::System.Web.UI.WebControls.Button btnSubmit;
 
         /// <summary>
-        /// lblOutput control.
+        /// LabelOutput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOutput;
+        protected global::System.Web.UI.WebControls.Label LabelOutput;
     }
 }

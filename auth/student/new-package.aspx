@@ -24,7 +24,7 @@
             width: 50%;
             border-radius: 10px;
             font-size: 16px;
-            text-align:center;
+            text-align: center;
         }
 
             .Loginbutton:hover {
@@ -55,18 +55,19 @@
         </center>
     </header>
     <div class="container">
-        <table style="width:90%;">
+        <table style="width: 90%;">
             <tc>
-
-
-
                 <tr>
                     <td align="center">
                         <asp:Label ID="Label1" runat="server" Text="Tracking Number"></asp:Label></td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtTrackingNumber" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ValidationGroup="Submission" ID="txtTrackingNumber" runat="server"></asp:TextBox></td>
+                    <td>
+                        <asp:CustomValidator ValidationGroup="Submission" ID="TrackingNumberValidator" CssClass="requiredAstrisk" runat="server" ErrorMessage="*" ControlToValidate="txtTrackingNumber" OnServerValidate="TrackingNumberValidator_ServerValidate"></asp:CustomValidator>
+                        
+                    </td>
                 </tr>
                 <tr>
                     <td align="center">
@@ -75,32 +76,44 @@
                 </tr>
                 <tr>
                     <td align="center">
+                        <asp:DropDownList ValidationGroup="Submission" ID="ddlShippingCompany" runat="server" DataSourceID="SqlDataSource1"
+                            DataTextField="CompanyName" CssClass="submitButton Loginbutton" AppendDataBoundItems="true" DataValueField="CompanyId">
 
-                        <asp:DropDownList ID="ddlShippingCompany" runat="server" DataSourceID="SqlDataSource1" DataTextField="CompanyName" CSSClass="submitButton Loginbutton" DataValueField="CompanyId">
+                            <asp:ListItem Selected="True" Text="(Select one)" Value="none"></asp:ListItem>
+
                         </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ValidationGroup="Submission" ID="RequiredFieldValidator2" CssClass="requiredAstrisk" runat="server"
+                            ControlToValidate="ddlShippingCompany" InitialValue="none" ErrorMessage="*"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
 
                 <tr>
-                    <td  align="center">
+                    <td align="center">
                         <asp:Label ID="Label3" runat="server" Text="Expected Date"></asp:Label></td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtExpectedDate" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ValidationGroup="Submission" ID="txtExpectedDate" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:CustomValidator ValidationGroup="Submission" ID="CustomValidator1" runat="server" CssClass="requiredAstrisk" ControlToValidate="txtExpectedDate" ErrorMessage="*" ValidateEmptyText="true" Display="Dynamic" OnServerValidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
+
+                    </td>
                 </tr>
 
                 <tr>
 
                     <td align="center">
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="submitButton Loginbutton" OnClick="btnSubmit_Click" /></td>
+                        <asp:Button CausesValidation="true" ValidationGroup="Submission" ID="btnSubmit" runat="server" Text="Submit" CssClass="submitButton Loginbutton" OnClick="btnSubmit_Click" /></td>
                 </tr>
             </tc>
 
 
 
         </table>
-        <asp:Label ID="lblOutput" runat="server" Text="You'll recieve an email containing the password required to retrieve your package when it arrives. "></asp:Label>
+        <asp:Label ID="LabelOutput" runat="server" Text=""></asp:Label>
 
     </div>
 

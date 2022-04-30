@@ -71,7 +71,7 @@
 
     <h1 style="font-size: 45px; text-align:center; height:100%; padding:10px; margin:0; padding-top:10px; background-color: #633394;" class="auto-style1">Create Account</h1>
      <div class="centerItems">
-        <asp:CreateUserWizard CssClass="bigTable" ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" RequireEmail="False" CancelButtonDestinationPageUrl="~/uauth/home.aspx" ContinueDestinationPageUrl="~/auth/user-home.aspx" ActiveStepIndex="1">
+        <asp:CreateUserWizard CssClass="bigTable" ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" RequireEmail="False" CancelButtonDestinationPageUrl="~/uauth/home.aspx" ContinueDestinationPageUrl="~/auth/user-home.aspx">
             <WizardSteps>
                 <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                     <ContentTemplate>
@@ -116,7 +116,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" colspan="2" style="color: Red;">
+                                <td align="center" style="color: Red;">
                                     <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
                                 </td>
                             </tr>

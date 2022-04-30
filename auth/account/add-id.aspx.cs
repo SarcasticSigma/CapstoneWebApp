@@ -60,7 +60,7 @@ namespace CapstoneWebPage.auth.account
 
                 HttpContext.Current.Response.Redirect("~/auth/account/info.aspx");
             }
-            throw new ArgumentException("Invalid btnsubmit!");
+            
         }
 
 

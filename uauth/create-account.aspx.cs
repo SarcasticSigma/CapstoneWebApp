@@ -19,7 +19,7 @@ namespace CapstoneWebPage.uauth
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
         {
-
+            Session.Add("UserName", CreateUserWizard1.UserName);
         }
 
         protected void Button1_Click(object sender, EventArgs e)

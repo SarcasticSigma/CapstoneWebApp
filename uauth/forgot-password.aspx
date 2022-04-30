@@ -59,10 +59,10 @@
 
 
 
-        <table>
+        <table width="100%">
             <tc>
                 <tr>
-                    <td colspan="3" style="padding-bottom: 1em;">
+                    <td colspan="3" align="center" style="padding-bottom: 1em;">
                         <asp:Label ID="Label2" runat="server" Text="Please enter your username and a reset link will be sent your email associated with your account."></asp:Label></td>
                 </tr>
                 <tr>
@@ -73,7 +73,7 @@
                 <tr>
 
                     <td align="center">
-                        <asp:TextBox ID="TextBox1"  runat="server"> </asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server"> </asp:TextBox>
 
                     </td>
 
@@ -85,9 +85,14 @@
                     </td>
              
                 </tr>
+                <tr>
+                    <td align="center">
+                        <asp:Label ID="lblOutput" runat="server" Text=""></asp:Label>
+                    </td>
+                </tr>
             </tc>
         </table>
-        <asp:Label ID="lblOutput" runat="server" Text=""></asp:Label>
+        
     </div>
         </asp:Panel>
 

@@ -17,7 +17,7 @@ namespace CapstoneWebPage.auth.student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.Title = "SQUIRE - Add Package";
         }
 
         string LookupUserId(string currentUser)

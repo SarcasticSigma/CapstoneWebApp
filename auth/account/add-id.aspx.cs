@@ -14,7 +14,7 @@ namespace CapstoneWebPage.auth.account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.Title = "SQUIRE - Add ID";
 
         }
 
@@ -60,7 +60,7 @@ namespace CapstoneWebPage.auth.account
 
                 HttpContext.Current.Response.Redirect("~/auth/account/info.aspx");
             }
-            Label2.Text = "Invalid!";
+            throw new ArgumentException("Invalid btnsubmit!");
         }
 
 
@@ -73,25 +73,45 @@ namespace CapstoneWebPage.auth.account
         /// <param name="args"></param>
         protected void SWORDSIdValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (String.IsNullOrEmpty(args.Value) || args.Value.Length < 9) { args.IsValid = false; return; }
-            if (args.Value.Substring(0, 3).Equals("983") && args.Value.Length == 9)
+            if (!(int.TryParse(args.Value, out _)))
             {
-                args.IsValid = true;
-            }
-            else
-            {
+                SWORDSIdValidator.ErrorMessage = "Please enter a number!";
                 args.IsValid = false;
+                return;
             }
+            if (String.IsNullOrEmpty(args.Value) || args.Value.Length < 9)
+            {
+                SWORDSIdValidator.ErrorMessage = "Please enter a valid MGA ID!";
+                args.IsValid = false; 
+                return;
+            }
+            if (!(args.Value.Substring(0, 3).Equals("983") && args.Value.Length == 9))
+            {
+                SWORDSIdValidator.ErrorMessage = "Please enter a valid MGA ID!";
+                args.IsValid = false;
+                return;
+
+            }
+            bool validId = validIdInput(source, args);
+            if (!validId)
+            {
+                SWORDSIdValidator.ErrorMessage = "Please enter a valid MGA ID!";
+                args.IsValid = false;
+                return;
+            }
+            args.IsValid = true;
+
+
         }
+
+
         /// <summary>
         /// This function ensures that the id input has not already been used.
         /// </summary>
         /// <param name="source"></param>
         /// <param name="args"></param>
-        protected void UniqueIdValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        protected bool validIdInput(object source, ServerValidateEventArgs args)
         {
-
-
             String myConString = System.Configuration.ConfigurationManager.ConnectionStrings["MainSquireDatabase"].ConnectionString;
             String mySQL = "SELECT PropertyValuesString FROM aspnet_Profile";
             using (SqlConnection myCon = new SqlConnection(myConString))
@@ -99,10 +119,8 @@ namespace CapstoneWebPage.auth.account
                 myCon.Open();
                 using (SqlCommand myCom = new SqlCommand(mySQL, myCon))
                 {
-
                     using (SqlDataReader reader = myCom.ExecuteReader())
                     {
-
                         while (reader.Read())
                         {
                             //TODO Implemented version needs to have this regex tweaked to allow 7 at the end of an ID.
@@ -110,22 +128,14 @@ namespace CapstoneWebPage.auth.account
                             string readId = rx.Match(reader.GetString(0)).Value;
                             if (readId == args.Value)
                             {
-                                args.IsValid = false;
-                                return;
+                                return false;
+
                             }
                         }
-                        args.IsValid = true;
-
-
+                        return true;
                     }
                 }
-
-
             }
-
-
         }
-
     }
-
 }

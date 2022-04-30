@@ -14,7 +14,7 @@ namespace CapstoneWebPage.uauth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.Title = "SQUIRE - Create Account";
         }
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)

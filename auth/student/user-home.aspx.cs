@@ -12,7 +12,7 @@ namespace CapstoneWebPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-   
+            Page.Title = "SQUIRE - Home";
 
 
 

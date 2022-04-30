@@ -13,6 +13,7 @@ namespace CapstoneWebPage.uauth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.Title = "SQUIRE - Password Reset";
         }
 
         protected void Button1_Click(object sender, EventArgs e)

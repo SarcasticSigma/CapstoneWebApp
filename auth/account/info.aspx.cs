@@ -12,7 +12,7 @@ namespace CapstoneWebPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.Title = "SQUIRE - User Info";
             MembershipUser user = Membership.GetUser();
             string[] currentUserRoles = Roles.GetRolesForUser();
             if (currentUserRoles.Contains("Admin") || currentUserRoles.Contains("Student"))

@@ -16,6 +16,7 @@ namespace CapstoneWebPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.Title = "SQUIRE - Login";
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 if (HttpContext.Current.User.IsInRole("Student"))

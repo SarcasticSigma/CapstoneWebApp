@@ -20,7 +20,7 @@ namespace CapstoneWebPage.auth.account
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Page.Validate();
+            Page.Validate("submission");
             if (Page.IsValid)
             {
                 string username = Membership.GetUser().UserName;
@@ -63,22 +63,6 @@ namespace CapstoneWebPage.auth.account
             Label2.Text = "Invalid!";
         }
 
-        /// <summary>
-        /// Ensures that the entered value begins with 983.
-        /// </summary>
-        /// <param name="source"></param>
-        /// <param name="args"></param>
-        protected void IDFormatValidator_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            if (args.Value.Substring(0, 3).Equals("983"))
-            {
-                args.IsValid = true;
-            }
-            else
-            {
-                args.IsValid = false;
-            }
-        }
 
         /// <summary>
         /// This function simulates checking the SWORDS database to see if an MGA id is present. 
@@ -89,6 +73,7 @@ namespace CapstoneWebPage.auth.account
         /// <param name="args"></param>
         protected void SWORDSIdValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
+            if (String.IsNullOrEmpty(args.Value) || args.Value.Length < 9) { args.IsValid = false; return; }
             if (args.Value.Substring(0, 3).Equals("983") && args.Value.Length == 9)
             {
                 args.IsValid = true;

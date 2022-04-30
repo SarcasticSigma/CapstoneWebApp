@@ -87,6 +87,11 @@ namespace CapstoneWebPage.uauth
         {
             HttpContext.Current.Response.Redirect("~/uauth/login.aspx");
         }
+
+        protected void StepNextButton_PreRender(object sender, EventArgs e)
+        {
+            this.Page.Form.DefaultButton = (sender as Button).UniqueID;
+        }
     }
     
 }

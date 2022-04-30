@@ -68,8 +68,8 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
-                                    <h1 style="font-size: 45px; text-align:center; height:100%; padding:10px; margin:0; padding-top:10px; background-color: #633394;" class="auto-style1">Create Account</h1>
+
+    <h1 style="font-size: 45px; text-align:center; height:100%; padding:10px; margin:0; padding-top:10px; background-color: #633394;" class="auto-style1">Create Account</h1>
      <div class="centerItems">
         <asp:CreateUserWizard CssClass="bigTable" ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" RequireEmail="False" CancelButtonDestinationPageUrl="~/uauth/home.aspx" ContinueDestinationPageUrl="~/auth/user-home.aspx">
             <WizardSteps>
@@ -128,7 +128,7 @@
                                 <td align="right" style="width: 50%;" colspan="1" >
                                     <asp:Button ID="Button1" runat="server" Text="Back" OnClick="Button1_Click" class="colorButton" /></td>
                                 <td align="left" colspan="1" style="width: 50%;">
-                                    <asp:Button ID="StepNextButton" runat="server" CommandName="MoveNext" Text="Create User" ValidationGroup="CreateUserWizard1"  class="colorButton"/>
+                                    <asp:Button ID="StepNextButton" runat="server" CommandName="MoveNext" Text="Create User" ValidationGroup="CreateUserWizard1"  class="colorButton" OnPreRender="StepNextButton_PreRender"/>
                                 </td>
                             </tr>
                         </table>
@@ -139,4 +139,5 @@
             </WizardSteps>
         </asp:CreateUserWizard>
     </div>
+   
 </asp:Content>

@@ -73,7 +73,7 @@ namespace CapstoneWebPage.auth.account
         /// <param name="args"></param>
         protected void SWORDSIdValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (!(int.TryParse(args.Value, out _)))
+            if (!(int.TryParse(args.Value.Trim(), out _)))
             {
                 SWORDSIdValidator.ErrorMessage = "Please enter a number!";
                 args.IsValid = false;
